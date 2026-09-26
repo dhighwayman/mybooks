@@ -47,6 +47,7 @@ function rand(seed) { // determinista: la misma pila siempre se apila igual
 }
 const spineOf = (key) => SPINES[hash(key) % SPINES.length];
 const coverUrl = (url, size = 300) => (url ? url.replace(/(\.\w+)$/, `._SY${size}_$1`) : null);
+const COVER_SIZE = 400; // mismo tamaño en pilas y mesa: los libros "voladores" ya tienen la portada en caché
 const grUrl = (item) => `https://www.goodreads.com/book/show/${item.bookId}`;
 
 // ------------------------------------------------------------------ modelo
@@ -215,9 +216,10 @@ function book3d(it, z, t, rnd, isTop, W) {
   const r = (rnd() - 0.5) * 12;
   const dx = (rnd() - 0.5) * 10;
   const dy = (rnd() - 0.5) * 8;
-  const cls = ["book3d", it.status === "missing" ? "ghost" : "", isTop ? "is-top" : ""].join(" ");
-  const src = coverUrl(it.cover, W > 90 ? 300 : 200);
-  return `<div class="${cls}" style="--z:${z}px;--t:${t}px;--dx:${dx.toFixed(1)}px;--dy:${dy.toFixed(1)}px;--r:${r.toFixed(1)}deg;--spine:${it.spine}">
+  const edge = !isTop && rnd() < 0.22; // algunos muestran el canto de las páginas
+  const cls = ["book3d", it.status === "missing" ? "ghost" : "", isTop ? "is-top" : "", edge ? "edge" : ""].join(" ");
+  const src = coverUrl(it.cover, COVER_SIZE);
+  return `<div class="${cls}" data-key="${esc(it.key)}" style="--z:${z}px;--t:${t}px;--dx:${dx.toFixed(1)}px;--dy:${dy.toFixed(1)}px;--r:${r.toFixed(1)}deg;--spine:${it.spine}">
     <div class="f f-top">${src ? `<img src="${esc(src)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">` : ""}<div class="fallback">${esc(it.title)}</div></div>
     <div class="f f-front">${esc(it.title)}</div>
     <div class="f f-right"></div>
@@ -297,8 +299,25 @@ function renderFloor() {
 
 // ------------------------------------------------------------------ vista de detalle
 
+const thickness = (it) => Math.max(9, Math.min(26, (it.pages || 350) / 22));
+const restPose = (r) => `translateZ(0px) rotateX(14deg) rotateY(20deg) rotateZ(${r}deg)`;
+
+function bookObj(it, inner = "", { size = COVER_SIZE, tilt = true } = {}) {
+  const src = coverUrl(it.cover, size);
+  const r = tilt ? ((hash(it.key) % 7) - 3) : 0;
+  return `<div class="bk-wrap"><div class="bk-shadow"></div>
+    <div class="bk" style="--t:${thickness(it).toFixed(1)}px;--spine:${it.spine};--r:${r}deg" data-r="${r}">
+      <div class="bk-face bk-front"><div class="fallback">${esc(it.title)}<em>${esc(it.author)}</em></div>
+        ${src ? `<img src="${esc(src)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">` : ""}${inner}</div>
+      <div class="bk-face bk-back"></div>
+      <div class="bk-face bk-spine"><span>${esc(it.title)}</span></div>
+      <div class="bk-face bk-edge-r"></div>
+      <div class="bk-face bk-edge-t"></div>
+      <div class="bk-face bk-edge-b"></div>
+    </div></div>`;
+}
+
 function coverHTML(it, opts = {}) {
-  const src = coverUrl(it.cover, 475);
   const badge = {
     read: `<span class="badge read">✓ Leído</span>`,
     reading: `<span class="badge pending">Leyendo</span>`,
@@ -312,11 +331,7 @@ function coverHTML(it, opts = {}) {
     : "";
   const stars = it.userRating ? `<span class="stars" aria-label="${it.userRating} estrellas">${"★".repeat(it.userRating)}</span>` : "";
   return `<button class="cover-item ${it.status}" data-key="${esc(it.key)}" aria-label="${esc(`${it.title}, ${it.author}`)}">
-    <div class="cv" style="--spine:${it.spine}">
-      <div class="fallback">${esc(it.title)}<em>${esc(it.author)}</em></div>
-      ${src ? `<img src="${esc(src)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">` : ""}
-      ${numb}${badge}
-    </div>
+    ${bookObj(it, numb + badge)}
     <span class="t">${esc(it.title)}</span>
     <span class="a">${esc(opts.hideAuthor ? [it.year, it.avgRating && `★ ${it.avgRating.toFixed(2)}`].filter(Boolean).join(" · ") : it.author)}</span>
     ${stars}${why}
@@ -386,7 +401,6 @@ function detailContent(p) {
 }
 
 let current = null; // pila abierta
-let originRect = null;
 
 function fillDetail(p) {
   const c = detailContent(p);
@@ -397,74 +411,177 @@ function fillDetail(p) {
   $("#detail").scrollTop = 0;
 }
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const ZOOM = 1.3;
+let opened = null; // { key, el } pila desde la que se abrió el detalle
+
+// Libros de una pila en pantalla, del de arriba al de abajo
+function stackFaces(pileEl) {
+  return [...pileEl.querySelectorAll(".book3d")].reverse().map((el) => ({ key: el.dataset.key, el, rect: el.querySelector(".f-top").getBoundingClientRect() }));
+}
+function visibleWrap(key, taken) {
+  return $$(`#detail-body .cover-item[data-key="${CSS.escape(key)}"] .bk-wrap`)
+    .find((w) => !taken.has(w) && w.getBoundingClientRect().top < innerHeight - 40);
+}
+
+// Un libro vuela entre la pila (tumbado) y la mesa (su sitio en la cuadrícula)
+function fly(wrap, pileRect, { delay = 0, back = false, rz = 20 } = {}) {
+  const to = wrap.getBoundingClientRect();
+  const bk = wrap.querySelector(".bk");
+  const r = Number(bk.dataset.r) || 0;
+  const cs = getComputedStyle(wrap);
+  const ghost = document.createElement("div");
+  ghost.className = "flyer";
+  Object.assign(ghost.style, { left: `${to.left}px`, top: `${to.top}px`, width: `${to.width}px`, height: `${to.height}px` });
+  ghost.style.setProperty("--w", cs.getPropertyValue("--w"));
+  ghost.style.setProperty("--h", cs.getPropertyValue("--h"));
+  const clone = bk.cloneNode(true);
+  clone.style.transition = "none";
+  clone.querySelectorAll("img").forEach((img) => { img.loading = "eager"; img.decoding = "sync"; });
+  ghost.appendChild(clone);
+  $("#flyers").appendChild(ghost);
+
+  const dx = pileRect.left + pileRect.width / 2 - (to.left + to.width / 2);
+  const dy = pileRect.top + pileRect.height / 2 - (to.top + to.height / 2);
+  const s = Math.max(0.35, Math.min(1.3, (pileRect.width * 0.82) / to.width));
+  let outer = [
+    { transform: `translate(${dx}px, ${dy}px) scale(${s})`, offset: 0 },
+    { transform: `translate(${dx * 0.55}px, ${dy * 0.55 - 110}px) scale(${(s + 1) / 2 * 1.12})`, offset: 0.42 },
+    { transform: "translate(0px, 0px) scale(1)", offset: 1 },
+  ];
+  let inner = [
+    { transform: `translateZ(0px) rotateX(64deg) rotateY(0deg) rotateZ(${rz + r}deg)`, offset: 0 },
+    { transform: `translateZ(40px) rotateX(30deg) rotateY(-14deg) rotateZ(${r + rz * 0.3}deg)`, offset: 0.42 },
+    { transform: restPose(r), offset: 1 },
+  ];
+  if (back) {
+    const rev = (k) => k.reverse().map((f) => ({ ...f, offset: 1 - f.offset }));
+    outer = rev(outer); inner = rev(inner);
+  }
+  const opts = { duration: 980, delay, easing: "cubic-bezier(.5,.05,.2,1)", fill: "both" };
+  const a = ghost.animate(outer, opts);
+  clone.animate(inner, opts);
+  return a.finished.then(() => ghost);
+}
+
+// Los libros que no estaban en la pila caen sobre la mesa
+function dealIn(skip, base = 0) {
+  if (reduceMotion) return;
+  $$("#detail-body .bk-wrap").filter((w) => !skip.has(w) && w.getBoundingClientRect().top < innerHeight + 40).slice(0, 40).forEach((w, i) => {
+    const bk = w.querySelector(".bk");
+    const r = Number(bk.dataset.r) || 0;
+    const opts = { duration: 700, delay: base + i * 45, easing: "cubic-bezier(.2,.9,.3,1.05)", fill: "backwards" };
+    w.animate([{ opacity: 0, transform: "translateY(-50px) scale(1.08)" }, { opacity: 1, transform: "none" }], opts);
+    bk.animate([{ transform: `translateZ(0px) rotateX(68deg) rotateY(0deg) rotateZ(${r + 10}deg)` }, { transform: restPose(r) }], opts);
+  });
+}
+
+function fillDetailAndShow(p) {
+  fillDetail(p);
+  document.title = `${p.title} · La biblioteca de ${DATA.user.name}`;
+}
+
 async function openPile(key, fromEl) {
   const p = piles.get(key);
   if (!p) return;
   const detail = $("#detail");
+  const floor = $("#floor");
   const wasOpen = !detail.hidden;
   current = key;
-  const stackEl = fromEl?.querySelector(".stack") || fromEl;
-  originRect = stackEl ? stackEl.getBoundingClientRect() : null;
-  fillDetail(p);
-  document.title = `${p.title} · La biblioteca de ${DATA.user.name}`;
+  fillDetailAndShow(p);
 
-  if (!wasOpen) {
-    document.body.classList.add("locked");
-    if (!reduceMotion && originRect) {
-      const floor = $("#floor");
-      const fr = floor.getBoundingClientRect();
-      floor.style.transformOrigin = `${originRect.left + originRect.width / 2 - fr.left}px ${originRect.top + originRect.height / 2 - fr.top}px`;
-      fromEl.classList.add("zooming");
-      $(".top").animate([{ opacity: 1 }, { opacity: 0 }], { duration: 400, fill: "forwards" });
-      await floor.animate([{ transform: "none", opacity: 1, filter: "blur(0)" }, { transform: "scale(2.8)", opacity: 0, filter: "blur(6px)" }],
-        { duration: 560, easing: "cubic-bezier(.6,0,.4,1)", fill: "forwards" }).finished;
-    }
-    detail.hidden = false;
-    detail.scrollTop = 0;
-    detail.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260, easing: "ease-out" });
-  } else if (!reduceMotion) {
-    $(".detail-inner").animate([{ opacity: 0, transform: "translateY(16px)" }, { opacity: 1, transform: "none" }], { duration: 380, easing: "ease-out" });
+  if (wasOpen) {
+    if (!reduceMotion) $(".detail-head").animate([{ opacity: 0, transform: "translateY(10px)" }, { opacity: 1, transform: "none" }], { duration: 380, easing: "ease-out" });
+    dealIn(new Set(), 60);
+    $("#back").focus({ preventScroll: true });
+    return;
   }
-  spreadBooks(wasOpen ? null : originRect);
-  $("#back").focus({ preventScroll: true });
-}
 
-// Los libros "salen" de la pila y se colocan en la estantería
-function spreadBooks(from) {
-  if (reduceMotion) return;
-  const cx = from ? from.left + from.width / 2 : innerWidth / 2;
-  const cy = from ? from.top + from.height / 2 : innerHeight * 0.3;
-  const els = $$("#detail-body .cover-item .cv").filter((el) => el.getBoundingClientRect().top < innerHeight + 40).slice(0, 30);
-  els.forEach((el, i) => {
-    const r = el.getBoundingClientRect();
-    const dx = cx - (r.left + r.width / 2);
-    const dy = cy - (r.top + r.height / 2);
-    const rot = ((hash(i) % 20) - 10);
-    el.animate([
-      { transform: `translate(${dx}px, ${dy}px) scale(.55) rotate(${rot}deg)`, opacity: 0 },
-      { opacity: 1, offset: 0.25 },
-      { transform: "none", opacity: 1 },
-    ], { duration: 720, delay: 40 + i * 38, easing: "cubic-bezier(.2,.9,.25,1.08)", fill: "backwards" });
-  });
+  document.body.classList.add("locked");
+  const animate = !reduceMotion && fromEl;
+  opened = fromEl ? { key, el: fromEl } : null;
+  if (animate) {
+    // 1. la cámara se acerca a la pila y las demás se apartan
+    const sr = fromEl.querySelector(".stack").getBoundingClientRect();
+    const fr = floor.getBoundingClientRect();
+    floor.style.transformOrigin = `${sr.left + sr.width / 2 - fr.left}px ${sr.top + sr.height / 2 - fr.top}px`;
+    fromEl.classList.add("zooming");
+    floor.classList.add("focusing");
+    $(".top").animate([{ opacity: 1 }, { opacity: 0 }], { duration: 400, fill: "forwards" });
+    floor.animate([{ transform: "none" }, { transform: `scale(${ZOOM})` }], { duration: 750, easing: "cubic-bezier(.5,0,.2,1)", fill: "forwards" });
+    await sleep(520);
+  }
+  detail.hidden = false;
+  detail.scrollTop = 0;
+  $("#back").focus({ preventScroll: true });
+  if (!animate) {
+    if (!reduceMotion) detail.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, easing: "ease-out" });
+    dealIn(new Set(), 80);
+    return;
+  }
+  // 2. la pila se deshace: cada libro vuela desde su sitio en la pila hasta la mesa
+  const rz = parseFloat(fromEl.querySelector(".stack").style.getPropertyValue("--rz")) || 20;
+  const taken = new Set();
+  const flights = stackFaces(fromEl).map((f, i) => {
+    const wrap = visibleWrap(f.key, taken);
+    if (!wrap) return null;
+    taken.add(wrap);
+    wrap.style.visibility = "hidden";
+    const delay = i * 110;
+    setTimeout(() => { f.el.style.visibility = "hidden"; }, delay);
+    return fly(wrap, f.rect, { delay, rz }).then((g) => { wrap.style.visibility = ""; g.remove(); });
+  }).filter(Boolean);
+  detail.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 650, delay: 100, easing: "ease-out", fill: "backwards" });
+  dealIn(taken, 350 + flights.length * 70);
+  await Promise.all(flights);
 }
 
 async function closePile() {
   const detail = $("#detail");
   if (detail.hidden) return;
+  const floor = $("#floor");
+  const pileEl = opened && document.contains(opened.el) ? opened.el : null;
+  const sameKey = opened && opened.key === current;
   current = null;
   document.title = `La biblioteca de ${DATA.user.name}`;
-  if (!reduceMotion) await detail.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 220, easing: "ease-in" }).finished;
-  detail.hidden = true;
-  document.body.classList.remove("locked");
-  const floor = $("#floor");
-  floor.getAnimations().forEach((a) => a.cancel());
-  $(".top").getAnimations().forEach((a) => a.cancel());
-  $$(".pile.zooming").forEach((el) => el.classList.remove("zooming"));
-  if (!reduceMotion && originRect) {
-    floor.animate([{ transform: "scale(2.8)", opacity: 0, filter: "blur(6px)" }, { transform: "none", opacity: 1, filter: "blur(0)" }],
-      { duration: 520, easing: "cubic-bezier(.2,.8,.2,1)" });
-    $(".top").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 520 });
+  $$("#flyers .flyer").forEach((g) => g.remove());
+
+  if (!reduceMotion && pileEl && floor.classList.contains("focusing")) {
+    // 3. los libros vuelven a apilarse (el de abajo primero)
+    const faces = sameKey ? stackFaces(pileEl).reverse() : [];
+    const taken = new Set();
+    const flights = faces.map((f, i) => {
+      const wrap = visibleWrap(f.key, taken);
+      if (!wrap) return null;
+      taken.add(wrap);
+      wrap.style.visibility = "hidden";
+      const rz = parseFloat(pileEl.querySelector(".stack").style.getPropertyValue("--rz")) || 20;
+      return fly(wrap, f.rect, { delay: i * 70, back: true, rz }).then((g) => { f.el.style.visibility = ""; g.remove(); });
+    }).filter(Boolean);
+    detail.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 500, easing: "ease-in", fill: "forwards" });
+    await Promise.all([...flights, sleep(500)]);
+  } else if (!reduceMotion) {
+    await detail.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 220, easing: "ease-in" }).finished;
   }
+  detail.hidden = true;
+  detail.getAnimations().forEach((a) => a.cancel());
+  document.body.classList.remove("locked");
+  $$(".book3d").forEach((el) => { el.style.visibility = ""; });
+
+  // 4. la cámara se aleja y vuelven las demás pilas
+  const old = [...floor.getAnimations(), ...$(".top").getAnimations()];
+  if (!reduceMotion && floor.classList.contains("focusing")) {
+    const a = floor.animate([{ transform: `scale(${ZOOM})` }, { transform: "none" }], { duration: 650, easing: "cubic-bezier(.3,.7,.2,1)" });
+    $(".top").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 650 });
+    old.forEach((x) => x.cancel());
+    floor.classList.remove("focusing");
+    await a.finished.catch(() => {});
+  } else {
+    old.forEach((x) => x.cancel());
+    floor.classList.remove("focusing");
+  }
+  $$(".pile.zooming").forEach((el) => el.classList.remove("zooming"));
+  opened = null;
   const back = lastPileEl && document.contains(lastPileEl) ? lastPileEl : null;
   back?.focus({ preventScroll: true });
 }
@@ -473,8 +590,8 @@ async function closePile() {
 
 function openCard(it, fromEl) {
   const layer = $("#card");
-  const src = coverUrl(it.cover, 600);
-  $("#card-cover").innerHTML = `<div class="cv" style="--spine:${it.spine}">${src ? `<img src="${esc(src)}" alt="Portada de ${esc(it.title)}">` : `<div class="fallback">${esc(it.title)}</div>`}</div>`;
+  $("#card-cover").innerHTML = bookObj(it, "", { size: 600, tilt: false });
+  $("#card-cover img")?.setAttribute("alt", `Portada de ${it.title}`);
   const status = {
     read: `<span class="status-pill read">✓ Leído</span>`, reading: `<span class="status-pill pending">Leyendo</span>`,
     pending: `<span class="status-pill pending">En tu lista de pendientes</span>`, missing: `<span class="status-pill missing">Te falta</span>`,
@@ -511,6 +628,8 @@ function openCard(it, fromEl) {
     const cr = card.getBoundingClientRect();
     const t = r ? `translate(${r.left + r.width / 2 - (cr.left + cr.width / 2)}px, ${r.top + r.height / 2 - (cr.top + cr.height / 2)}px) scale(.3) rotateY(-40deg)` : "scale(.9)";
     card.animate([{ transform: `perspective(1200px) ${t}`, opacity: 0 }, { transform: "perspective(1200px)", opacity: 1 }], { duration: 480, easing: "cubic-bezier(.2,.9,.3,1)" });
+    $("#card-cover .bk").animate([{ transform: "translateZ(0px) rotateX(10deg) rotateY(-70deg) rotateZ(0deg)" }, { transform: "translateZ(0px) rotateX(8deg) rotateY(24deg) rotateZ(0deg)" }],
+      { duration: 900, delay: 120, easing: "cubic-bezier(.2,.9,.3,1)", fill: "backwards" });
     layer.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 250 });
   }
   $("#card-close").focus({ preventScroll: true });
@@ -607,7 +726,7 @@ async function init() {
     const goEl = e.target.closest("[data-go]");
     if (goEl) { e.preventDefault(); go(goEl.dataset.go); return; }
     const cov = e.target.closest(".cover-item");
-    if (cov) openCard(items.get(cov.dataset.key), cov.querySelector(".cv"));
+    if (cov) openCard(items.get(cov.dataset.key), cov.querySelector(".bk-wrap"));
   });
   $("#back").addEventListener("click", () => { history.replaceState(null, "", location.pathname + location.search); route(); });
   $("#card-close").addEventListener("click", closeCard);
