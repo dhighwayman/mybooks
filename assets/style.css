@@ -238,6 +238,10 @@ button { font: inherit; color: inherit; }
 }
 .cover-item { display: grid; gap: 10px; align-content: start; justify-items: start; cursor: pointer; background: none; border: 0; padding: 0; text-align: left; color: inherit; }
 .cover-item:focus-visible { outline: none; }
+.cover-item .cap { display: grid; gap: 4px; }
+/* mesa preparada pero oculta mientras la cámara se acerca */
+.detail-inner.pre .cover-item, .detail-inner.pre .detail-head, .detail-inner.pre #detail-body > .chips,
+.detail-inner.pre .shelf h4, .detail-inner.pre .shelf .hint { visibility: hidden; }
 
 /* libro 3D: tapa, contratapa, lomo redondeado y cantos de papel */
 .bk-wrap { position: relative; width: var(--w); height: var(--h); }

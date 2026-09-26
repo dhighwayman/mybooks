@@ -336,9 +336,9 @@ function coverHTML(it, opts = {}) {
   const stars = it.userRating ? `<span class="stars" aria-label="${it.userRating} estrellas">${"★".repeat(it.userRating)}</span>` : "";
   return `<button class="cover-item ${it.status}" data-key="${esc(it.key)}" aria-label="${esc(`${it.title}, ${it.author}`)}">
     ${bookObj(it, numb + badge)}
-    <span class="t">${esc(it.title)}</span>
+    <span class="cap"><span class="t">${esc(it.title)}</span>
     <span class="a">${esc(opts.hideAuthor ? [it.year, it.avgRating && `★ ${it.avgRating.toFixed(2)}`].filter(Boolean).join(" · ") : it.author)}</span>
-    ${stars}${why}
+    ${stars}${why}</span>
   </button>`;
 }
 
@@ -468,7 +468,8 @@ function flyAll(pairs, { back = false, rz = 20, step = 110 } = {}) {
     ghost.style.setProperty("--h", j.h);
     const clone = j.bk.cloneNode(true);
     clone.style.transition = "none";
-    clone.querySelectorAll("img").forEach((img) => { img.loading = "eager"; });
+    // la portada ya está decodificada: en síncrono el volador nunca sale sin ella
+    clone.querySelectorAll("img").forEach((img) => { img.loading = "eager"; img.decoding = "sync"; });
     ghost.appendChild(clone);
     layer.appendChild(ghost);
     let outer = outerFrames(j.dx, j.dy, j.s);
@@ -519,21 +520,37 @@ function pairFaces(faces) {
   return { pairs, taken };
 }
 
-// Los libros que no estaban en la pila caen sobre la mesa
+// Los libros que no estaban en la pila caen sobre la mesa.
+// Sin fundidos de opacidad sobre los libros 3D (obligan a aplanar y redibujar sus caras en cada
+// fotograma): cada libro se hace visible en su momento y cae girando desde el canto (solo transform).
+const edgePose = (r) => `perspective(1100px) translateZ(0px) rotateX(84deg) rotateY(0deg) rotateZ(${r + 10}deg)`;
+const inView = (el) => { const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight + 40; };
+
 function dealTargets(skip = new Set()) {
-  return $$("#detail-body .bk-wrap").filter((w) => !skip.has(w) && w.getBoundingClientRect().top < innerHeight + 40).slice(0, SMALL() ? 12 : 40);
+  return $$("#detail-body .cover-item").filter((c) => !skip.has(c.querySelector(".bk-wrap")) && inView(c)).slice(0, SMALL() ? 12 : 40);
+}
+function reveal(el, delay, then) {
+  setTimeout(() => { el.style.visibility = "visible"; then?.(); }, delay);
 }
 function dealIn(list, base = 0) {
-  if (reduceMotion) return;
   if (list instanceof Set) list = dealTargets(list);
-  list.forEach((w, i) => {
+  if (reduceMotion) return;
+  list.forEach((c, i) => {
+    const w = c.querySelector(".bk-wrap");
     const bk = w.querySelector(".bk");
     const r = Number(bk.dataset.r) || 0;
-    const opts = { duration: 700, delay: base + i * 45, easing: "cubic-bezier(.2,.9,.3,1.05)", fill: "backwards" };
-    w.animate([{ opacity: 0, transform: "translateY(-50px) scale(1.08)" }, { opacity: 1, transform: "none" }], opts);
-    bk.animate([{ transform: `perspective(1100px) translateZ(0px) rotateX(68deg) rotateY(0deg) rotateZ(${r + 10}deg)` }, { transform: restPose(r) }], opts);
+    c.style.visibility = "hidden";
+    reveal(c, base + i * 45, () => {
+      const opts = { duration: 650, easing: "cubic-bezier(.2,.9,.3,1.05)" };
+      w.animate([{ transform: "translateY(-46px) scale(1.1)" }, { transform: "none" }], opts);
+      bk.animate([{ transform: edgePose(r) }, { transform: restPose(r) }], opts);
+      c.querySelector(".cap")?.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400, delay: 150, fill: "backwards" });
+    });
   });
 }
+
+// Textos de la mesa visibles en pantalla (cabecera, títulos de estante, avisos, chips)
+const tableTexts = () => $$(".detail-head, #detail-body > .chips, #detail-body .shelf h4, #detail-body .shelf .hint").filter(inView);
 
 function fillDetailAndShow(p) {
   fillDetail(p);
@@ -574,8 +591,8 @@ async function openPile(key, fromEl) {
     return;
   }
 
-  // 0. preparar la mesa antes de mover la cámara: ya pintada, pero casi invisible
-  inner.style.opacity = "0.001";
+  // 0. preparar la mesa antes de mover la cámara (maquetada pero oculta)
+  inner.classList.add("pre");
   detail.style.pointerEvents = "none";
   detail.hidden = false;
   detail.scrollTop = 0;
@@ -592,30 +609,33 @@ async function openPile(key, fromEl) {
   bg.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 600, easing: "ease-in-out", fill: "backwards" });
   floor.animate([{ transform: "none" }, { transform: `scale(${ZOOM})` }], zoom);
   await lift.animate([{ transform: "none" }, { transform: `scale(${ZOOM})` }], zoom).finished;
-  floor.style.visibility = "hidden"; // ya está tapado: que el navegador deje de dibujarlo
   $("#back").focus({ preventScroll: true });
 
   // 2. la pila se deshace: cada libro vuela desde su sitio en la pila hasta la mesa
   const rz = parseFloat(lift.querySelector(".stack").style.getPropertyValue("--rz")) || 20;
+  // lectura
   const faces = stackFaces(lift);
   const { pairs, taken } = pairFaces(faces);
-  const deal = dealTargets(taken); // leer antes de escribir
-  // los libros de la pila que no vuelan (sin sitio visible en la mesa) se retiran a la vez que los demás
+  const deal = dealTargets(taken);
+  const texts = tableTexts();
+  // escritura: lo que va a aparecer se oculta uno a uno y la mesa deja de estar oculta en bloque
   const flying = new Set(pairs.map((p) => p.face));
   faces.forEach((f, i) => { if (!flying.has(f)) setTimeout(() => { f.el.style.visibility = "hidden"; }, i * 110); });
-  const texts = $$(".detail-head, #detail-body .chips, #detail-body .shelf h4, #detail-body .shelf .hint, #detail-body .cover-item .t, #detail-body .cover-item .a, #detail-body .cover-item .why, #detail-body .cover-item .stars")
-    .filter((el) => el.getBoundingClientRect().top < innerHeight);
+  pairs.forEach((p) => { p.wrap.closest(".cover-item").style.visibility = "hidden"; });
+  texts.forEach((el) => { el.style.visibility = "hidden"; });
+  dealIn(deal, 350 + pairs.length * 70);
+  inner.classList.remove("pre");
   const jobs = flyAll(pairs, { rz });
   jobs.forEach((j) => setTimeout(() => { j.face.el.style.visibility = "hidden"; }, j.delay));
   const flights = jobs.map((j) => j.done.then(() => {
+    const c = j.wrap.closest(".cover-item");
+    c.style.visibility = "visible";
     j.wrap.style.visibility = "";
     j.ghost.remove();
-    j.wrap.querySelectorAll(".badge, .num").forEach((el) => el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 250 }));
+    c.querySelectorAll(".cap, .badge, .num").forEach((el) => el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300 }));
   }));
-  // sin fundir todo el bloque: cada texto y cada libro aparece por su cuenta
-  texts.forEach((el, i) => el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: 120 + Math.min(i, 30) * 12, easing: "ease-out", fill: "backwards" }));
-  dealIn(deal, 350 + jobs.length * 70);
-  inner.style.opacity = "";
+  texts.forEach((el, i) => reveal(el, 80 + i * 60, () => el.animate([{ opacity: 0, transform: "translateY(6px)" }, { opacity: 1, transform: "none" }], { duration: 450, easing: "ease-out" })));
+  requestAnimationFrame(() => { floor.style.visibility = "hidden"; }); // tapado: que el navegador deje de dibujarlo
   setTimeout(() => { detail.style.pointerEvents = ""; }, 400);
   await Promise.all(flights);
 }
@@ -653,10 +673,24 @@ async function closePile() {
     // 3. los libros vuelven a apilarse (el de abajo primero) mientras la mesa se despeja
     const faces = sameKey ? stackFaces(lift).reverse() : [];
     const rz = parseFloat(lift.querySelector(".stack").style.getPropertyValue("--rz")) || 20;
-    const jobs = flyAll(pairFaces(faces).pairs, { back: true, rz, step: 70 });
+    const covers = $$("#detail-body .cover-item").filter(inView);
+    const texts = tableTexts();
+    const { pairs } = pairFaces(faces);
+    const jobs = flyAll(pairs, { back: true, rz, step: 70 });
     const flights = jobs.map((j) => j.done.then(() => { j.face.el.style.visibility = ""; j.ghost.remove(); }));
-    inner.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 300, easing: "ease-in", fill: "forwards" });
-    await Promise.all([...flights, sleep(300)]);
+    // el resto de libros se levanta sobre el canto y desaparece (solo transform), los textos se funden
+    const flown = new Set(pairs.map((p) => p.wrap));
+    const lifts = covers.filter((c) => !flown.has(c.querySelector(".bk-wrap"))).slice(0, 40).map((c, i) => {
+      const w = c.querySelector(".bk-wrap");
+      const bk = w.querySelector(".bk");
+      const r = Number(bk.dataset.r) || 0;
+      const o = { duration: 260, delay: i * 12, easing: "ease-in", fill: "forwards" };
+      w.animate([{ transform: "none" }, { transform: "translateY(-30px) scale(1.05)" }], o);
+      return bk.animate([{ transform: restPose(r) }, { transform: edgePose(r) }], o).finished.then(() => { c.style.visibility = "hidden"; });
+    });
+    covers.forEach((c) => c.querySelector(".cap")?.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 180, fill: "forwards" }));
+    texts.forEach((el) => el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200, fill: "forwards" }));
+    await Promise.all([...flights, ...lifts, sleep(300)]);
     lift.querySelectorAll(".book3d").forEach((el) => { el.style.visibility = ""; });
   } else if (!reduceMotion) {
     await Promise.all([
@@ -665,7 +699,9 @@ async function closePile() {
     ]);
   }
   detail.hidden = true;
-  inner.getAnimations().forEach((a) => a.cancel());
+  inner.getAnimations({ subtree: true }).forEach((a) => a.cancel());
+  $$(".detail-head, #detail-body *").forEach((el) => { if (el.style.visibility) el.style.visibility = ""; });
+  inner.classList.remove("pre");
   inner.style.opacity = "";
   detail.style.pointerEvents = "";
   document.body.classList.remove("locked");
