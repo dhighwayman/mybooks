@@ -790,7 +790,11 @@ async function route() {
 
 async function renderVersion() {
   const el = $("#version");
-  if (IS_LOCAL) { el.textContent = "Versión local (sin publicar)"; return; }
+  if (IS_LOCAL) {
+    const local = ["localhost", "127.0.0.1", ""].includes(location.hostname);
+    el.textContent = local ? "Versión local (sin publicar)" : "Versión sin identificar: publicada sin el workflow de GitHub Actions";
+    return;
+  }
   const when = new Date(BUILD.date);
   const date = isNaN(when) ? "" : ` · ${when.toLocaleString("es-ES", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })}`;
   el.innerHTML = `Versión <a href="https://github.com/${REPO}/commit/${esc(BUILD.sha)}" target="_blank" rel="noopener"><code>${esc(BUILD.short)}</code></a>${esc(date)}`;
