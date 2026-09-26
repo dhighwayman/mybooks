@@ -33,6 +33,8 @@ También hay un workflow opcional (`.github/workflows/update-data.yml`) que hace
 
 ## Publicar en GitHub Pages
 
-*Settings → Pages → Build and deployment → Deploy from a branch*, elige la rama `main` y la carpeta `/ (root)`. La web quedará en `https://<usuario>.github.io/mybooks/`.
+La web se publica con el workflow `.github/workflows/pages.yml` en cada push a `main` (y después de cada actualización automática de datos). Hay que activarlo una vez: *Settings → Pages → Build and deployment → Source: GitHub Actions*. La web quedará en `https://dhighwayman.github.io/mybooks/`.
 
-Para probarla en local: `python3 -m http.server` y abre <http://localhost:8000>.
+Al publicar, el workflow escribe en la página el commit publicado (se ve en el pie: *Versión abc1234 · fecha*) y añade `?v=<commit>` a los ficheros para que el navegador no mezcle versiones. Si la página que ves está en caché y ya hay una versión más nueva, el pie lo avisa con un botón para recargar.
+
+Para probarla en local: `python3 -m http.server` y abre <http://localhost:8000> (el pie dirá *Versión local*).

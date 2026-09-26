@@ -1,0 +1,47 @@
+name: Publicar en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # los commits del bot de datos no disparan "push", así que se publica al terminar ese workflow
+  workflow_run:
+    workflows: ["Actualizar libros de Goodreads"]
+    types: [completed]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Preparar la web con el commit publicado
+        run: |
+          SHA=$(git rev-parse HEAD)
+          SHORT=${SHA:0:7}
+          DATE=$(git log -1 --format=%cI)
+          mkdir _site
+          cp -r index.html assets data .nojekyll _site/
+          sed -i "s/__BUILD_SHA__/$SHA/g; s/__BUILD_DATE__/$DATE/g; s/__BUILD__/$SHORT/g" _site/index.html
+          printf '{"sha":"%s","short":"%s","date":"%s"}\n' "$SHA" "$SHORT" "$DATE" > _site/version.json
+          grep -c "$SHORT" _site/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

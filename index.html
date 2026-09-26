@@ -9,7 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+  <!-- El workflow de publicación (pages.yml) sustituye estos marcadores por el commit publicado -->
+  <meta name="build" content="__BUILD__">
+  <meta name="build-sha" content="__BUILD_SHA__">
+  <meta name="build-date" content="__BUILD_DATE__">
+  <link rel="stylesheet" href="assets/style.css?v=__BUILD__">
 </head>
 <body>
   <header class="top">
@@ -69,8 +73,9 @@
 
   <footer class="foot">
     <span id="updated"></span> · Datos de <a id="gr-link" href="https://www.goodreads.com/review/list/79173731-david" target="_blank" rel="noopener">Goodreads</a>
+    <br><span id="version" class="version"></span>
   </footer>
 
-  <script src="assets/app.js" type="module"></script>
+  <script src="assets/app.js?v=__BUILD__" type="module"></script>
 </body>
 </html>

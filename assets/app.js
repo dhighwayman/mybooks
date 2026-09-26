@@ -26,6 +26,12 @@ const GENRE_ES = {
 const GENERIC = new Set(["Fiction", "Audiobook", "Novels", "Adult", "Adult Fiction", "Literature", "Book Club", "Contemporary", "Spain"]);
 const SPINES = ["#7a2e22", "#1f4a44", "#2b3a5c", "#8a5a1c", "#4d2a4a", "#355b2c", "#6b3b1f", "#23404f", "#7b4b2a", "#3f3a2c", "#5c1f2f", "#2f4f3a"];
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const REPO = "dhighwayman/mybooks";
+
+// Versión publicada (la inyecta .github/workflows/pages.yml); en local quedan los marcadores
+const meta = (n) => document.querySelector(`meta[name="${n}"]`)?.content || "";
+const BUILD = { short: meta("build"), sha: meta("build-sha"), date: meta("build-date") };
+const IS_LOCAL = !BUILD.short || BUILD.short.startsWith("__");
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -782,6 +788,22 @@ async function route() {
 
 // ------------------------------------------------------------------ arranque
 
+async function renderVersion() {
+  const el = $("#version");
+  if (IS_LOCAL) { el.textContent = "Versión local (sin publicar)"; return; }
+  const when = new Date(BUILD.date);
+  const date = isNaN(when) ? "" : ` · ${when.toLocaleString("es-ES", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })}`;
+  el.innerHTML = `Versión <a href="https://github.com/${REPO}/commit/${esc(BUILD.sha)}" target="_blank" rel="noopener"><code>${esc(BUILD.short)}</code></a>${esc(date)}`;
+  // ¿hay una versión más nueva publicada que la que estoy viendo (caché)?
+  try {
+    const latest = await (await fetch(`version.json?t=${Date.now()}`, { cache: "no-store" })).json();
+    if (latest.short && latest.short !== BUILD.short) {
+      el.insertAdjacentHTML("beforeend", ` · <strong class="stale">hay una versión más nueva (<code>${esc(latest.short)}</code>)</strong> <button class="chip" id="reload">Recargar</button>`);
+      $("#reload").addEventListener("click", () => location.reload());
+    }
+  } catch { /* sin version.json: nada que comparar */ }
+}
+
 function renderStats(m) {
   const read = m.owned.filter((b) => b.status === "read");
   const pages = read.reduce((s, b) => s + (b.pages || 0), 0);
@@ -797,11 +819,12 @@ function renderStats(m) {
 
 async function init() {
   try {
-    DATA = await (await fetch("data/library.json")).json();
+    DATA = await (await fetch(`data/library.json${IS_LOCAL ? "" : `?v=${BUILD.short}`}`)).json();
   } catch (e) {
     $("#floor").innerHTML = `<p class="empty">No se pudo cargar data/library.json (${esc(e.message)}).</p>`;
     return;
   }
+  renderVersion();
   MODEL = buildModel();
   renderStats(MODEL);
   renderFloor();
