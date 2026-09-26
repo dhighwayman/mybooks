@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La biblioteca de David</title>
+  <meta name="description" content="Mis libros de Goodreads apilados por autor, serie y género, con sugerencias de lo que me falta.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='8' y='40' width='48' height='10' rx='2' fill='%23b5523b'/><rect x='12' y='29' width='42' height='10' rx='2' fill='%23d9a441'/><rect x='10' y='18' width='40' height='10' rx='2' fill='%234a7a6a'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <h1>La biblioteca de <span id="user-name">David</span></h1>
+      <p class="stats" id="stats"></p>
+    </div>
+    <nav class="controls" aria-label="Organizar pilas">
+      <div class="segmented" role="tablist" id="modes">
+        <button role="tab" data-mode="autores" aria-selected="true">Autores</button>
+        <button role="tab" data-mode="series">Series</button>
+        <button role="tab" data-mode="generos">Géneros</button>
+        <button role="tab" data-mode="parati">Para ti ✦</button>
+      </div>
+      <div class="tools">
+        <label class="search">
+          <span class="visually-hidden">Buscar</span>
+          <input id="search" type="search" placeholder="Buscar libro, autor o serie…" autocomplete="off">
+        </label>
+        <select id="sort" aria-label="Ordenar pilas">
+          <option value="size">Más altas primero</option>
+          <option value="recent">Añadidas recientemente</option>
+          <option value="alpha">A → Z</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <main id="floor-wrap">
+    <div id="floor" class="floor" aria-live="polite"></div>
+  </main>
+
+  <section id="detail" class="detail" hidden aria-modal="true" role="dialog" aria-labelledby="detail-title">
+    <div class="detail-inner">
+      <header class="detail-head">
+        <button class="back" id="back" aria-label="Volver a las pilas">← Pilas</button>
+        <div>
+          <p class="kicker" id="detail-kicker"></p>
+          <h2 id="detail-title"></h2>
+          <p class="detail-sub" id="detail-sub"></p>
+        </div>
+      </header>
+      <div id="detail-body"></div>
+    </div>
+  </section>
+
+  <div id="card" class="card-layer" hidden>
+    <article class="card" role="dialog" aria-modal="true" aria-labelledby="card-title">
+      <button class="card-close" id="card-close" aria-label="Cerrar">×</button>
+      <div class="card-cover" id="card-cover"></div>
+      <div class="card-info" id="card-info"></div>
+    </article>
+  </div>
+
+  <footer class="foot">
+    <span id="updated"></span> · Datos de <a id="gr-link" href="https://www.goodreads.com/review/list/79173731-david" target="_blank" rel="noopener">Goodreads</a>
+  </footer>
+
+  <script src="assets/app.js" type="module"></script>
+</body>
+</html>
