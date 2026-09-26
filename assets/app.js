@@ -841,7 +841,38 @@ async function renderVersion() {
       el.insertAdjacentHTML("beforeend", ` · <strong class="stale">hay una versión más nueva (<code>${esc(latest.short)}</code>)</strong> <button class="chip" id="reload">Recargar</button>`);
       $("#reload").addEventListener("click", () => location.reload());
     }
-  } catch { /* sin version.json: nada que comparar */ }
+  } catch {
+    if (!navigator.onLine) el.insertAdjacentHTML("beforeend", " · sin conexión: copia guardada");
+  }
+}
+
+// ------------------------------------------------------------------ app instalable (PWA)
+
+function setupPWA() {
+  if (!IS_LOCAL && "serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+  }
+  const area = $("#install-area");
+  const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+  if (standalone) return;
+  // Android / Chrome / Edge: botón propio en vez del aviso del navegador
+  let deferred = null;
+  addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferred = e;
+    area.innerHTML = `<br><button class="chip install" id="install">⤓ Instalar la app</button>`;
+    $("#install").addEventListener("click", async () => {
+      deferred.prompt();
+      await deferred.userChoice.catch(() => {});
+      deferred = null;
+      area.innerHTML = "";
+    });
+  });
+  addEventListener("appinstalled", () => { area.innerHTML = ""; });
+  // iPhone / iPad: Safari no tiene botón de instalar, solo "Añadir a pantalla de inicio"
+  if (/iphone|ipad|ipod/i.test(navigator.userAgent)) {
+    area.innerHTML = `<br><span class="ios-hint">Para instalarla: <b>Compartir</b> <span aria-hidden="true">⎋</span> → <b>Añadir a pantalla de inicio</b></span>`;
+  }
 }
 
 function renderStats(m) {
@@ -865,8 +896,12 @@ async function init() {
     return;
   }
   renderVersion();
+  setupPWA();
   MODEL = buildModel();
   renderStats(MODEL);
+  const modo = new URLSearchParams(location.search).get("modo");
+  if (["autores", "series", "generos", "parati"].includes(modo)) state.mode = modo;
+  $$("#modes button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.mode === state.mode)));
   renderFloor();
 
   $("#modes").addEventListener("click", (e) => {

@@ -2,10 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>La biblioteca de David</title>
   <meta name="description" content="Mis libros de Goodreads apilados por autor, serie y género, con sugerencias de lo que me falta.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='8' y='40' width='48' height='10' rx='2' fill='%23b5523b'/><rect x='12' y='29' width='42' height='10' rx='2' fill='%23d9a441'/><rect x='10' y='18' width='40' height='10' rx='2' fill='%234a7a6a'/></svg>">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#17120e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Mis libros">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -74,6 +81,7 @@
   <footer class="foot">
     <span id="updated"></span> · Datos de <a id="gr-link" href="https://www.goodreads.com/review/list/79173731-david" target="_blank" rel="noopener">Goodreads</a>
     <br><span id="version" class="version"></span>
+    <span id="install-area" class="install-area"></span>
   </footer>
 
   <script src="assets/app.js?v=__BUILD__" type="module"></script>

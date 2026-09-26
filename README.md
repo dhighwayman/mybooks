@@ -37,4 +37,10 @@ La web se publica con el workflow `.github/workflows/pages.yml` en cada push a `
 
 Al publicar, el workflow escribe en la página el commit publicado (se ve en el pie: *Versión abc1234 · fecha*) y añade `?v=<commit>` a los ficheros para que el navegador no mezcle versiones. Si la página que ves está en caché y ya hay una versión más nueva, el pie lo avisa con un botón para recargar.
 
+### App instalable (PWA)
+
+La web es una PWA: en Android/Chrome aparece un botón **Instalar la app** en el pie (o en el menú del navegador → *Instalar aplicación*); en iPhone, Safari → *Compartir* → *Añadir a pantalla de inicio*. Se abre a pantalla completa, con icono propio y accesos directos a *Para ti* y *Series*.
+
+El service worker (`sw.js`) guarda la web, los datos, las portadas y las fuentes, así que también funciona sin conexión. La página se pide siempre primero a la red (para ver la última versión) y cada publicación usa su propia caché, que sustituye a la anterior.
+
 Para probarla en local: `python3 -m http.server` y abre <http://localhost:8000> (el pie dirá *Versión local*).

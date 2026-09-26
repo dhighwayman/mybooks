@@ -35,10 +35,10 @@ jobs:
           SHORT=${SHA:0:7}
           DATE=$(git log -1 --format=%cI)
           mkdir _site
-          cp -r index.html assets data .nojekyll _site/
-          sed -i "s/__BUILD_SHA__/$SHA/g; s/__BUILD_DATE__/$DATE/g; s/__BUILD__/$SHORT/g" _site/index.html
+          cp -r index.html sw.js manifest.webmanifest assets data .nojekyll _site/
+          sed -i "s/__BUILD_SHA__/$SHA/g; s/__BUILD_DATE__/$DATE/g; s/__BUILD__/$SHORT/g" _site/index.html _site/sw.js
           printf '{"sha":"%s","short":"%s","date":"%s"}\n' "$SHA" "$SHORT" "$DATE" > _site/version.json
-          grep -c "$SHORT" _site/index.html
+          grep -c "$SHORT" _site/index.html _site/sw.js
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

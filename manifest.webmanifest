@@ -1,0 +1,21 @@
+{
+  "name": "La biblioteca de David",
+  "short_name": "Mis libros",
+  "description": "Mis libros de Goodreads apilados por autor, serie y género, con lo que me falta y sugerencias.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#17120e",
+  "theme_color": "#17120e",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Para ti", "short_name": "Para ti", "url": "./?modo=parati", "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Mis series", "short_name": "Series", "url": "./?modo=series", "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
