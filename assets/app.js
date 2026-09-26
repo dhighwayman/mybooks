@@ -300,7 +300,7 @@ function renderFloor() {
 // ------------------------------------------------------------------ vista de detalle
 
 const thickness = (it) => Math.max(9, Math.min(26, (it.pages || 350) / 22));
-const restPose = (r) => `translateZ(0px) rotateX(14deg) rotateY(20deg) rotateZ(${r}deg)`;
+const restPose = (r) => `perspective(1100px) translateZ(0px) rotateX(14deg) rotateY(20deg) rotateZ(${r}deg)`;
 
 function bookObj(it, inner = "", { size = COVER_SIZE, tilt = true } = {}) {
   const src = coverUrl(it.cover, size);
@@ -411,6 +411,7 @@ function fillDetail(p) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const ZOOM = 1.3;
+const SMALL = () => matchMedia("(max-width: 640px)").matches; // en móvil, menos libros animados a la vez
 let opened = null; // { key, el } pila desde la que se abrió el detalle
 
 // Libros de una pila en pantalla, del de arriba al de abajo
@@ -441,9 +442,9 @@ function flyAll(pairs, { back = false, rz = 20, step = 110 } = {}) {
     };
   });
   const outerFrames = (dx, dy, s) => [
-    { transform: `translate(${dx}px, ${dy}px) scale(${s})`, perspective: "20000px", offset: 0 },
-    { transform: `translate(${dx * 0.55}px, ${dy * 0.55 - 110}px) scale(${(s + 1) / 2 * 1.12})`, perspective: "2400px", offset: 0.42 },
-    { transform: "translate(0px, 0px) scale(1)", perspective: "1100px", offset: 1 },
+    { transform: `translate(${dx}px, ${dy}px) scale(${s})`, offset: 0 },
+    { transform: `translate(${dx * 0.55}px, ${dy * 0.55 - 110}px) scale(${(s + 1) / 2 * 1.12})`, offset: 0.42 },
+    { transform: "translate(0px, 0px) scale(1)", offset: 1 },
   ];
   const rev = (k) => k.reverse().map((f) => ({ ...f, offset: 1 - f.offset }));
   // fase 2 (escritura): crear los voladores en la postura de la pila
@@ -466,8 +467,8 @@ function flyAll(pairs, { back = false, rz = 20, step = 110 } = {}) {
     layer.appendChild(ghost);
     let outer = outerFrames(j.dx, j.dy, j.s);
     let inner = [
-      { transform: `translateZ(0px) rotateX(52deg) rotateY(0deg) rotateZ(${j.startRot}deg)`, offset: 0 },
-      { transform: `translateZ(40px) rotateX(30deg) rotateY(-14deg) rotateZ(${j.r + rz * 0.3}deg)`, offset: 0.42 },
+      { transform: `perspective(20000px) translateZ(0px) rotateX(52deg) rotateY(0deg) rotateZ(${j.startRot}deg)`, offset: 0 },
+      { transform: `perspective(2400px) translateZ(40px) rotateX(30deg) rotateY(-14deg) rotateZ(${j.r + rz * 0.3}deg)`, offset: 0.42 },
       { transform: restPose(j.r), offset: 1 },
     ];
     if (back) { outer = rev(outer); inner = rev(inner); }
@@ -503,7 +504,7 @@ function flyAll(pairs, { back = false, rz = 20, step = 110 } = {}) {
 function pairFaces(faces) {
   const taken = new Set();
   const pairs = [];
-  for (const face of faces) {
+  for (const face of faces.slice(0, SMALL() ? 5 : 8)) {
     const wrap = visibleWrap(face.key, taken);
     if (!wrap) continue;
     taken.add(wrap);
@@ -514,7 +515,7 @@ function pairFaces(faces) {
 
 // Los libros que no estaban en la pila caen sobre la mesa
 function dealTargets(skip = new Set()) {
-  return $$("#detail-body .bk-wrap").filter((w) => !skip.has(w) && w.getBoundingClientRect().top < innerHeight + 40).slice(0, 40);
+  return $$("#detail-body .bk-wrap").filter((w) => !skip.has(w) && w.getBoundingClientRect().top < innerHeight + 40).slice(0, SMALL() ? 12 : 40);
 }
 function dealIn(list, base = 0) {
   if (reduceMotion) return;
@@ -524,7 +525,7 @@ function dealIn(list, base = 0) {
     const r = Number(bk.dataset.r) || 0;
     const opts = { duration: 700, delay: base + i * 45, easing: "cubic-bezier(.2,.9,.3,1.05)", fill: "backwards" };
     w.animate([{ opacity: 0, transform: "translateY(-50px) scale(1.08)" }, { opacity: 1, transform: "none" }], opts);
-    bk.animate([{ transform: `translateZ(0px) rotateX(68deg) rotateY(0deg) rotateZ(${r + 10}deg)` }, { transform: restPose(r) }], opts);
+    bk.animate([{ transform: `perspective(1100px) translateZ(0px) rotateX(68deg) rotateY(0deg) rotateZ(${r + 10}deg)` }, { transform: restPose(r) }], opts);
   });
 }
 
@@ -551,40 +552,53 @@ async function openPile(key, fromEl) {
 
   document.body.classList.add("locked");
   const animate = !reduceMotion && fromEl;
+  const bg = $("#detail-bg");
+  const inner = $(".detail-inner");
   opened = fromEl ? { key, el: fromEl, lift: null } : null;
-  if (animate) {
-    // 0. preparar la mesa antes de mover la cámara (evita un tirón a mitad de animación)
-    detail.style.opacity = "0.001"; // casi invisible pero ya pintada
-    detail.style.pointerEvents = "none";
+  bg.hidden = false;
+  if (!animate) {
     detail.hidden = false;
     detail.scrollTop = 0;
-    // la pila elegida se "levanta" a su propia capa; el resto del suelo se funde de una pieza
-    const lift = liftPile(fromEl);
-    opened.lift = lift;
-    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-    // 1. la cámara se acerca a la pila
-    const sr = lift.getBoundingClientRect();
-    const fr = floor.getBoundingClientRect();
-    floor.style.transformOrigin = `${sr.left + sr.width / 2 - fr.left}px ${sr.top + sr.height / 2 - fr.top}px`;
-    floor.classList.add("focusing");
-    const zoom = { duration: 650, easing: "cubic-bezier(.5,0,.2,1)", fill: "forwards" };
-    $(".top").animate([{ opacity: 1 }, { opacity: 0 }], { duration: 400, fill: "forwards" });
-    floor.animate([{ transform: "none", opacity: 1 }, { transform: `scale(${ZOOM})`, opacity: 0 }], zoom);
-    await lift.animate([{ transform: "none" }, { transform: `scale(${ZOOM})` }], zoom).finished;
-  }
-  detail.hidden = false;
-  detail.scrollTop = 0;
-  $("#back").focus({ preventScroll: true });
-  if (!animate) {
-    if (!reduceMotion) detail.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, easing: "ease-out" });
+    $("#back").focus({ preventScroll: true });
+    if (!reduceMotion) {
+      bg.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300 });
+      inner.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, easing: "ease-out" });
+    }
     dealIn(new Set(), 80);
     return;
   }
+
+  // 0. preparar la mesa antes de mover la cámara: ya pintada, pero casi invisible
+  inner.style.opacity = "0.001";
+  detail.style.pointerEvents = "none";
+  detail.hidden = false;
+  detail.scrollTop = 0;
+  const lift = liftPile(fromEl); // la pila elegida, en su propia capa
+  opened.lift = lift;
+  await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+  // 1. la cámara se acerca a la pila; una sola capa oscura tapa el resto del suelo
+  const sr = lift.getBoundingClientRect();
+  const fr = floor.getBoundingClientRect();
+  floor.style.transformOrigin = `${sr.left + sr.width / 2 - fr.left}px ${sr.top + sr.height / 2 - fr.top}px`;
+  floor.classList.add("focusing");
+  const zoom = { duration: 650, easing: "cubic-bezier(.5,0,.2,1)", fill: "forwards" };
+  bg.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 600, easing: "ease-in-out", fill: "backwards" });
+  floor.animate([{ transform: "none" }, { transform: `scale(${ZOOM})` }], zoom);
+  await lift.animate([{ transform: "none" }, { transform: `scale(${ZOOM})` }], zoom).finished;
+  floor.style.visibility = "hidden"; // ya está tapado: que el navegador deje de dibujarlo
+  $("#back").focus({ preventScroll: true });
+
   // 2. la pila se deshace: cada libro vuela desde su sitio en la pila hasta la mesa
-  const lift = opened.lift;
   const rz = parseFloat(lift.querySelector(".stack").style.getPropertyValue("--rz")) || 20;
-  const { pairs, taken } = pairFaces(stackFaces(lift));
+  const faces = stackFaces(lift);
+  const { pairs, taken } = pairFaces(faces);
   const deal = dealTargets(taken); // leer antes de escribir
+  // los libros de la pila que no vuelan (sin sitio visible en la mesa) se retiran a la vez que los demás
+  const flying = new Set(pairs.map((p) => p.face));
+  faces.forEach((f, i) => { if (!flying.has(f)) setTimeout(() => { f.el.style.visibility = "hidden"; }, i * 110); });
+  const texts = $$(".detail-head, #detail-body .chips, #detail-body .shelf h4, #detail-body .shelf .hint, #detail-body .cover-item .t, #detail-body .cover-item .a, #detail-body .cover-item .why, #detail-body .cover-item .stars")
+    .filter((el) => el.getBoundingClientRect().top < innerHeight);
   const jobs = flyAll(pairs, { rz });
   jobs.forEach((j) => setTimeout(() => { j.face.el.style.visibility = "hidden"; }, j.delay));
   const flights = jobs.map((j) => j.done.then(() => {
@@ -592,9 +606,10 @@ async function openPile(key, fromEl) {
     j.ghost.remove();
     j.wrap.querySelectorAll(".badge, .num").forEach((el) => el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 250 }));
   }));
-  detail.style.opacity = "";
-  detail.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 650, delay: 100, easing: "ease-out", fill: "backwards" });
-  requestAnimationFrame(() => dealIn(deal, 350 + jobs.length * 70 - 16)); // repartir el trabajo en dos fotogramas
+  // sin fundir todo el bloque: cada texto y cada libro aparece por su cuenta
+  texts.forEach((el, i) => el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: 120 + Math.min(i, 30) * 12, easing: "ease-out", fill: "backwards" }));
+  dealIn(deal, 350 + jobs.length * 70);
+  inner.style.opacity = "";
   setTimeout(() => { detail.style.pointerEvents = ""; }, 400);
   await Promise.all(flights);
 }
@@ -620,6 +635,8 @@ async function closePile() {
   const detail = $("#detail");
   if (detail.hidden) return;
   const floor = $("#floor");
+  const bg = $("#detail-bg");
+  const inner = $(".detail-inner");
   const lift = opened?.lift && document.contains(opened.lift) ? opened.lift : null;
   const sameKey = opened && opened.key === current;
   current = null;
@@ -627,35 +644,41 @@ async function closePile() {
   $$("#flyers .flyer").forEach((g) => g.remove());
 
   if (!reduceMotion && lift) {
-    // 3. los libros vuelven a apilarse (el de abajo primero)
+    // 3. los libros vuelven a apilarse (el de abajo primero) mientras la mesa se despeja
     const faces = sameKey ? stackFaces(lift).reverse() : [];
     const rz = parseFloat(lift.querySelector(".stack").style.getPropertyValue("--rz")) || 20;
     const jobs = flyAll(pairFaces(faces).pairs, { back: true, rz, step: 70 });
     const flights = jobs.map((j) => j.done.then(() => { j.face.el.style.visibility = ""; j.ghost.remove(); }));
-    detail.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 500, easing: "ease-in", fill: "forwards" });
-    await Promise.all([...flights, sleep(500)]);
+    inner.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 300, easing: "ease-in", fill: "forwards" });
+    await Promise.all([...flights, sleep(300)]);
     lift.querySelectorAll(".book3d").forEach((el) => { el.style.visibility = ""; });
   } else if (!reduceMotion) {
-    await detail.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 220, easing: "ease-in" }).finished;
+    await Promise.all([
+      inner.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 220, easing: "ease-in" }).finished,
+      bg.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 220, fill: "forwards" }).finished,
+    ]);
   }
   detail.hidden = true;
-  detail.getAnimations().forEach((a) => a.cancel());
-  detail.style.opacity = "";
+  inner.getAnimations().forEach((a) => a.cancel());
+  inner.style.opacity = "";
   detail.style.pointerEvents = "";
   document.body.classList.remove("locked");
 
-  // 4. la cámara se aleja y vuelve el resto del suelo
-  const old = [...floor.getAnimations(), ...$(".top").getAnimations(), ...(lift ? lift.getAnimations() : [])];
+  // 4. la cámara se aleja y la capa oscura desaparece
+  floor.style.visibility = "";
+  const old = [...floor.getAnimations(), ...bg.getAnimations(), ...(lift ? lift.getAnimations() : [])];
   if (!reduceMotion && lift) {
     const out = { duration: 650, easing: "cubic-bezier(.3,.7,.2,1)" };
-    const a = floor.animate([{ transform: `scale(${ZOOM})`, opacity: 0 }, { transform: "none", opacity: 1 }], out);
+    const a = floor.animate([{ transform: `scale(${ZOOM})` }, { transform: "none" }], out);
     const b = lift.animate([{ transform: `scale(${ZOOM})` }, { transform: "none" }], out);
-    $(".top").animate([{ opacity: 0 }, { opacity: 1 }], out);
+    const c = bg.animate([{ opacity: 1 }, { opacity: 0 }], { ...out, fill: "forwards" });
     old.forEach((x) => x.cancel());
-    await Promise.all([a.finished, b.finished]).catch(() => {});
+    await Promise.all([a.finished, b.finished, c.finished]).catch(() => {});
   } else {
     old.forEach((x) => x.cancel());
   }
+  bg.hidden = true;
+  bg.getAnimations().forEach((x) => x.cancel());
   floor.classList.remove("focusing");
   if (opened?.el) opened.el.style.visibility = "";
   lift?.remove();
@@ -706,7 +729,7 @@ function openCard(it, fromEl) {
     const cr = card.getBoundingClientRect();
     const t = r ? `translate(${r.left + r.width / 2 - (cr.left + cr.width / 2)}px, ${r.top + r.height / 2 - (cr.top + cr.height / 2)}px) scale(.3) rotateY(-40deg)` : "scale(.9)";
     card.animate([{ transform: `perspective(1200px) ${t}`, opacity: 0 }, { transform: "perspective(1200px)", opacity: 1 }], { duration: 480, easing: "cubic-bezier(.2,.9,.3,1)" });
-    $("#card-cover .bk").animate([{ transform: "translateZ(0px) rotateX(10deg) rotateY(-70deg) rotateZ(0deg)" }, { transform: "translateZ(0px) rotateX(8deg) rotateY(24deg) rotateZ(0deg)" }],
+    $("#card-cover .bk").animate([{ transform: "perspective(1100px) translateZ(0px) rotateX(10deg) rotateY(-70deg) rotateZ(0deg)" }, { transform: "perspective(1100px) translateZ(0px) rotateX(8deg) rotateY(24deg) rotateZ(0deg)" }],
       { duration: 900, delay: 120, easing: "cubic-bezier(.2,.9,.3,1)", fill: "backwards" });
     layer.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 250 });
   }

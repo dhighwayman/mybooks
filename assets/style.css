@@ -91,7 +91,8 @@ button { font: inherit; color: inherit; }
   --W: 104px; --D: 150px;
   position: relative; display: flex; flex-direction: column; align-items: center; justify-content: end;
   background: none; border: 0; padding: 0 4px 12px; cursor: pointer; text-align: center; min-height: 290px;
-  animation: pile-in .6s var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * 28ms);
+  animation: pile-in .6s var(--ease-out) backwards;
+  content-visibility: auto; contain-intrinsic-size: auto 310px; overflow-clip-margin: 30px; padding-top: 24px; animation-delay: calc(var(--i, 0) * 28ms);
 }
 @keyframes pile-in { from { opacity: 0; transform: translateY(24px) scale(.96); } }
 .pile:focus-visible { outline: none; }
@@ -175,7 +176,7 @@ button { font: inherit; color: inherit; }
 .book3d.ghost .f-top::before { content: ""; position: absolute; inset: 0; z-index: 3; background: repeating-linear-gradient(45deg, rgba(0,0,0,.18) 0 6px, transparent 6px 12px); }
 
 /* al abrir una pila: copia "levantada" de la pila, con la postura de hover congelada */
-.lifted { position: fixed; z-index: 39; pointer-events: none; transform-origin: 50% 50%; will-change: transform; }
+.lifted { position: fixed; z-index: 41; pointer-events: none; transform-origin: 50% 50%; will-change: transform; }
 .lifted .stage { width: 100%; }
 .lifted .stack { transition: none; transform: translateY(calc(var(--D) * .22)) rotateX(52deg) rotateZ(calc(var(--rz, 24deg) - 8deg)); }
 .lifted .book3d { transition: none; transform: translateZ(calc(var(--z) * 1.12)) translate(var(--dx), var(--dy)) rotateZ(calc(var(--r) * 1.8)); }
@@ -184,7 +185,7 @@ button { font: inherit; color: inherit; }
   content: ""; position: absolute; left: 50%; bottom: 10px; width: 200px; height: 150px; margin-left: -100px;
   background: radial-gradient(closest-side, rgba(224, 166, 74, .22), transparent);
 }
-.floor { will-change: transform, opacity; }
+
 
 .pile-label { margin-top: 6px; display: grid; gap: 3px; justify-items: center; max-width: 180px; }
 .pile-label strong { font-family: var(--serif); font-weight: 600; font-size: 16px; line-height: 1.15; }
@@ -202,14 +203,16 @@ button { font: inherit; color: inherit; }
 }
 
 /* ------------------------------------------------------------------ vista de detalle */
-.detail {
-  position: fixed; inset: 0; z-index: 40; overflow-y: auto; overscroll-behavior: contain;
+.detail-bg {
+  position: fixed; inset: 0; z-index: 40; pointer-events: none; will-change: opacity;
   background:
     radial-gradient(1100px 600px at 50% -5%, rgba(224, 166, 74, .13), transparent 70%),
     radial-gradient(ellipse at 50% 120%, rgba(0,0,0,.6), transparent 60%),
     repeating-linear-gradient(92deg, rgba(255,235,200,.018) 0 2px, transparent 2px 9px, rgba(0,0,0,.05) 9px 11px, transparent 11px 23px),
     linear-gradient(#21180f, #140f0b);
 }
+.detail-bg[hidden] { display: none; }
+.detail { position: fixed; inset: 0; z-index: 42; overflow-y: auto; overscroll-behavior: contain; }
 .detail[hidden] { display: none; }
 .detail-inner { max-width: 1180px; margin: 0 auto; padding: 22px clamp(16px, 4vw, 40px) 80px; }
 .detail-head { display: flex; gap: 20px; align-items: start; position: sticky; top: 0; z-index: 3; padding: 8px 0 16px; background: linear-gradient(rgba(26,19,13,.97) 70%, rgba(26,19,13,0)); }
@@ -237,7 +240,7 @@ button { font: inherit; color: inherit; }
 .cover-item:focus-visible { outline: none; }
 
 /* libro 3D: tapa, contratapa, lomo redondeado y cantos de papel */
-.bk-wrap { position: relative; width: var(--w); height: var(--h); perspective: 1100px; perspective-origin: 30% 20%; }
+.bk-wrap { position: relative; width: var(--w); height: var(--h); }
 .bk-shadow {
   position: absolute; left: 6%; right: -8%; bottom: -14px; height: 34px; border-radius: 50%;
   background: radial-gradient(closest-side, rgba(0,0,0,.6), transparent); transition: transform .5s var(--ease-out), opacity .5s;
@@ -245,10 +248,10 @@ button { font: inherit; color: inherit; }
 .cover-item:hover .bk-shadow, .cover-item:focus-visible .bk-shadow { transform: translateY(10px) scale(.9); opacity: .6; }
 .bk {
   position: absolute; inset: 0; transform-style: preserve-3d;
-  transform: translateZ(0px) rotateX(14deg) rotateY(20deg) rotateZ(var(--r, 0deg));
+  transform: perspective(1100px) translateZ(0px) rotateX(14deg) rotateY(20deg) rotateZ(var(--r, 0deg));
   transition: transform .55s var(--ease-out);
 }
-.cover-item:hover .bk, .cover-item:focus-visible .bk { transform: translateZ(26px) rotateX(4deg) rotateY(-10deg) rotateZ(0deg); }
+.cover-item:hover .bk, .cover-item:focus-visible .bk { transform: perspective(1100px) translateZ(26px) rotateX(4deg) rotateY(-10deg) rotateZ(0deg); }
 .bk-face { position: absolute; backface-visibility: hidden; }
 .bk-front {
   inset: 0; transform: translateZ(calc(var(--t) / 2)); border-radius: 2px 5px 5px 2px; overflow: hidden; background: var(--spine);
@@ -315,7 +318,7 @@ button { font: inherit; color: inherit; }
 .cover-item.missing .bk .badge { color: #f5b3a0; }
 .flyers { position: fixed; inset: 0; z-index: 50; pointer-events: none; }
 .flyer .badge, .flyer .num { display: none; }
-.flyer { position: fixed; perspective: 1100px; perspective-origin: 30% 20%; transform-origin: 50% 50%; will-change: transform; }
+.flyer { position: fixed; transform-origin: 50% 50%; will-change: transform; }
 .cover-item .t { font-family: var(--serif); font-size: 14.5px; line-height: 1.2; font-weight: 600; }
 .cover-item .a { font-size: 12.5px; color: var(--ink-3); line-height: 1.3; }
 .cover-item .why { font-size: 11.5px; color: var(--ink-3); line-height: 1.3; }
@@ -341,8 +344,8 @@ button { font: inherit; color: inherit; }
 }
 .card-close { position: absolute; top: 10px; right: 12px; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg-2); cursor: pointer; font-size: 20px; line-height: 1; }
 .card-cover { --w: 220px; --h: 330px; padding: 6px 0 20px 14px; }
-.card-cover .bk { transform: translateZ(0px) rotateX(8deg) rotateY(24deg) rotateZ(0deg); }
-.card-cover:hover .bk { transform: translateZ(0px) rotateX(4deg) rotateY(-28deg) rotateZ(0deg); }
+.card-cover .bk { transform: perspective(1100px) translateZ(0px) rotateX(8deg) rotateY(24deg) rotateZ(0deg); }
+.card-cover:hover .bk { transform: perspective(1100px) translateZ(0px) rotateX(4deg) rotateY(-28deg) rotateZ(0deg); }
 .card-info h3 { margin: 0 0 4px; font-family: var(--serif); font-size: clamp(24px, 3vw, 32px); line-height: 1.1; padding-right: 30px; }
 .card-info .by { margin: 0 0 12px; color: var(--ink-2); }
 .card-info .by button { background: none; border: 0; padding: 0; color: var(--accent); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
