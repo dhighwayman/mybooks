@@ -222,12 +222,12 @@ function book3d(it, z, t, rnd, isTop, W) {
   const r = (rnd() - 0.5) * 12;
   const dx = (rnd() - 0.5) * 10;
   const dy = (rnd() - 0.5) * 8;
-  const edge = !isTop && rnd() < 0.22; // algunos muestran el canto de las páginas
-  const cls = ["book3d", it.status === "missing" ? "ghost" : "", isTop ? "is-top" : "", edge ? "edge" : ""].join(" ");
+  const cls = ["book3d", it.status === "missing" ? "ghost" : "", isTop ? "is-top" : ""].join(" ");
   const src = coverUrl(it.cover, COVER_SIZE);
   return `<div class="${cls}" data-key="${esc(it.key)}" style="--z:${z}px;--t:${t}px;--dx:${dx.toFixed(1)}px;--dy:${dy.toFixed(1)}px;--r:${r.toFixed(1)}deg;--spine:${it.spine}">
     <div class="f f-top">${src ? `<img src="${esc(src)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">` : ""}<div class="fallback">${esc(it.title)}</div></div>
-    <div class="f f-front">${esc(it.title)}</div>
+    <div class="f f-spine"><span>${esc(it.title)}</span></div>
+    <div class="f f-front"></div>
     <div class="f f-right"></div>
   </div>`;
 }
@@ -248,7 +248,7 @@ function pileHTML(p, i) {
     return html;
   }).join("");
   const stageH = Math.round((small ? 88 : 104) + z * 0.86);
-  const rz = 16 + rnd() * 20;
+  const rz = -(16 + rnd() * 20); // girada para que se vea el lado izquierdo: el lomo
   const key = `${p.kind}:${p.id}`;
   let tag = "";
   if (p.rec) tag = `<span class="tag">Nueva pila</span>`;
@@ -444,7 +444,7 @@ function flyAll(pairs, { back = false, rz = 20, step = 110 } = {}) {
       r: Number(bk.dataset.r) || 0,
       w: cs.getPropertyValue("--w"), h: cs.getPropertyValue("--h"),
       // misma postura que el libro en la pila (la pila se dibuja sin perspectiva)
-      startRot: rz - 8 + (face.el.classList.contains("is-top") ? br - 5 : br * 1.8),
+      startRot: rz + 8 + (face.el.classList.contains("is-top") ? br - 5 : br * 1.8),
     };
   });
   const outerFrames = (dx, dy, s) => [

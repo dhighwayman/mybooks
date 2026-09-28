@@ -103,10 +103,10 @@ button { font: inherit; color: inherit; }
   position: absolute; left: 50%; bottom: 0;
   width: var(--W); height: var(--D); margin-left: calc(var(--W) / -2);
   transform-style: preserve-3d;
-  transform: translateY(calc(var(--D) * .22)) rotateX(58deg) rotateZ(var(--rz, 24deg));
+  transform: translateY(calc(var(--D) * .22)) rotateX(58deg) rotateZ(var(--rz, -24deg));
   transition: transform .6s var(--ease-out);
 }
-.pile:hover .stack, .pile:focus-visible .stack { transform: translateY(calc(var(--D) * .22)) rotateX(52deg) rotateZ(calc(var(--rz, 24deg) - 8deg)); }
+.pile:hover .stack, .pile:focus-visible .stack { transform: translateY(calc(var(--D) * .22)) rotateX(52deg) rotateZ(calc(var(--rz, -24deg) + 8deg)); }
 
 .shadow {
   position: absolute; inset: -10px; border-radius: 12px;
@@ -136,34 +136,36 @@ button { font: inherit; color: inherit; }
 }
 .book3d .f-top img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; }
 .book3d .f-top .fallback { padding: 10px 8px 10px 14px; font-family: var(--serif); font-size: 12px; line-height: 1.15; color: rgba(255,255,255,.92); text-align: left; }
-/* lomo redondeado: sombreado cilíndrico, cabezadas y letras doradas */
-.book3d .f-front {
-  left: 0; top: 100%; width: 100%; height: var(--t);
-  transform-origin: top center; transform: translateZ(var(--t)) rotateX(-90deg);
-  border-radius: 3px / 45%;
+/* lomo en el borde izquierdo (el largo), redondeado: sombreado cilíndrico, cabezadas y letras doradas */
+.book3d .f-spine {
+  left: 0; top: 0; width: var(--t); height: 100%;
+  transform-origin: left center; transform: rotateY(-90deg);
+  border-radius: 45% / 3px;
   background:
-    linear-gradient(to bottom, rgba(0,0,0,.5), rgba(255,255,255,.07) 22%, rgba(255,255,255,.28) 42%, rgba(255,255,255,.06) 62%, rgba(0,0,0,.55)),
-    linear-gradient(90deg, rgba(0,0,0,.35), transparent 6px, transparent calc(100% - 6px), rgba(0,0,0,.35)),
+    linear-gradient(90deg, rgba(0,0,0,.5), rgba(255,255,255,.07) 22%, rgba(255,255,255,.28) 45%, rgba(255,255,255,.06) 65%, rgba(0,0,0,.55)),
+    linear-gradient(to bottom, rgba(0,0,0,.35), transparent 7px, transparent calc(100% - 7px), rgba(0,0,0,.35)),
     var(--spine);
-  display: flex; align-items: center; justify-content: flex-start; padding: 0 22px 0 9px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.book3d .f-spine span {
+  writing-mode: vertical-rl; max-height: calc(100% - 34px); overflow: hidden; white-space: nowrap;
   font-family: var(--serif); font-weight: 600; font-size: min(9px, calc(var(--t) * .6)); letter-spacing: .06em; text-transform: uppercase;
-  color: #f1d9a4; text-shadow: 0 1px 0 rgba(0,0,0,.45); white-space: nowrap;
+  color: #f1d9a4; text-shadow: 0 1px 0 rgba(0,0,0,.45);
 }
-.book3d .f-front::before, .book3d .f-front::after {
-  content: ""; position: absolute; top: 12%; bottom: 12%; width: 1.5px; background: rgba(241, 217, 164, .55); box-shadow: 0 0 0 .5px rgba(0,0,0,.2);
+.book3d .f-spine::before, .book3d .f-spine::after {
+  content: ""; position: absolute; left: 14%; right: 14%; height: 1.5px; background: rgba(241, 217, 164, .55); box-shadow: 0 0 0 .5px rgba(0,0,0,.2);
 }
-.book3d .f-front::before { right: 14px; }
-.book3d .f-front::after { right: 10px; }
-/* algunos libros de la pila asoman el canto de las páginas en vez del lomo */
-.book3d.edge .f-front {
-  color: transparent; text-shadow: none; border-radius: 1px;
+.book3d .f-spine::before { top: 9px; }
+.book3d .f-spine::after { bottom: 9px; }
+/* cantos de las páginas (abajo y a la derecha), un poco metidos respecto a las tapas */
+.book3d .f-front {
+  left: 2px; top: calc(100% - 2px); width: calc(100% - 4px); height: var(--t);
+  transform-origin: top center; transform: translateZ(var(--t)) rotateX(-90deg);
   background:
     linear-gradient(to bottom, var(--spine) 0 1.5px, transparent 1.5px calc(100% - 1.5px), var(--spine) calc(100% - 1.5px)),
-    linear-gradient(90deg, rgba(0,0,0,.2), transparent 12%, transparent 88%, rgba(0,0,0,.2)),
+    linear-gradient(90deg, rgba(0,0,0,.22), transparent 10%, transparent 90%, rgba(0,0,0,.18)),
     repeating-linear-gradient(to bottom, #f3e8d2 0 1px, #d8c9ac 1px 2px);
 }
-.book3d.edge .f-front::before, .book3d.edge .f-front::after { display: none; }
-/* canto de las páginas, un poco metido respecto a las tapas */
 .book3d .f-right {
   left: calc(100% - 2px); top: 2px; width: var(--t); height: calc(100% - 4px);
   transform-origin: left center; transform: translateZ(var(--t)) rotateY(90deg);
@@ -178,7 +180,7 @@ button { font: inherit; color: inherit; }
 /* al abrir una pila: copia "levantada" de la pila, con la postura de hover congelada */
 .lifted { position: fixed; z-index: 41; pointer-events: none; transform-origin: 50% 50%; will-change: transform; }
 .lifted .stage { width: 100%; }
-.lifted .stack { transition: none; transform: translateY(calc(var(--D) * .22)) rotateX(52deg) rotateZ(calc(var(--rz, 24deg) - 8deg)); }
+.lifted .stack { transition: none; transform: translateY(calc(var(--D) * .22)) rotateX(52deg) rotateZ(calc(var(--rz, -24deg) + 8deg)); }
 .lifted .book3d { transition: none; transform: translateZ(calc(var(--z) * 1.12)) translate(var(--dx), var(--dy)) rotateZ(calc(var(--r) * 1.8)); }
 .lifted .book3d.is-top { transform: translateZ(calc(var(--z) * 1.12 + 14px)) translate(calc(var(--dx) + 6px), calc(var(--dy) - 4px)) rotateZ(calc(var(--r) - 5deg)); }
 .lifted.rec .stage::before {
