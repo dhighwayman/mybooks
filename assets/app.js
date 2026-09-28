@@ -353,6 +353,15 @@ function recsFor(bookIds, excludeAuthor, max = 10) {
   return MODEL.recs.filter((r) => r.authorId !== excludeAuthor && (r.because || []).some((id) => ids.has(id))).slice(0, max);
 }
 
+// "te faltan 2" / "1 pendiente" / "¡serie completa!" (solo si están todos leídos)
+function seriesState(p, missing) {
+  const pending = p.entries.filter((e) => e.item.status === "pending" || e.item.status === "reading").length;
+  const parts = [];
+  if (missing) parts.push(`te ${missing === 1 ? "falta" : "faltan"} ${missing}`);
+  if (pending) parts.push(plural(pending, "pendiente", "pendientes"));
+  return parts.length ? ` · ${parts.join(" · ")}` : " · ¡serie completa!";
+}
+
 function detailContent(p) {
   const chip = (key, label, extra = "") => `<button class="chip" data-go="${esc(key)}">${label}${extra}</button>`;
   if (p.kind === "autor") {
@@ -378,7 +387,7 @@ function detailContent(p) {
     return {
       kicker: "Serie", title: p.title,
       sub: p.authors.join(", "),
-      extra: `<div class="progress"><span class="bar" style="--p:${pct}%"><i></i></span> ${p.read} de ${p.total} leídos${missing.length ? ` · te ${missing.length === 1 ? "falta" : "faltan"} ${missing.length}` : " · ¡serie completa!"}</div>`,
+      extra: `<div class="progress"><span class="bar" style="--p:${pct}%"><i></i></span> ${p.read} de ${p.total} leídos${seriesState(p, missing.length)}</div>`,
       body:
         `<div class="chips">${p.authors.map((a) => chip(`autor:${slug(a)}`, `Autor <b>${esc(a)}</b>`)).join("")}<a class="chip" href="${esc(p.url)}" target="_blank" rel="noopener">Ver serie en Goodreads ↗</a></div>` +
         shelf("La serie completa", `${p.total} libros`, "En orden de lectura. Los que te faltan aparecen con borde discontinuo.", p.entries, { hideAuthor: true }) +
