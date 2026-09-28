@@ -4,8 +4,140 @@
   "name": "David",
   "profile": "https://www.goodreads.com/review/list/79173731"
  },
- "generatedAt": "2026-09-26T11:05:36+00:00",
+ "generatedAt": "2026-09-28T12:34:43+00:00",
  "books": [
+  {
+   "bookId": "254000603",
+   "workId": "295764725",
+   "title": "Los huérfanos",
+   "fullTitle": "Los huérfanos",
+   "authorId": "17883260",
+   "author": "Carmen Mola",
+   "authorImage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1676762135i/17883260.jpg",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1781608005i/254000603.jpg",
+   "genres": [
+    "Thriller"
+   ],
+   "series": [],
+   "pages": 448,
+   "language": "Spanish; Castilian",
+   "year": 2026,
+   "avgRating": 3.99,
+   "ratingsCount": 359,
+   "description": "Hay heridas que no se cierran. Y de ellas nacen los monstruos.\n\nEn Belfast, tres niños crecieron en un orfanato donde el miedo era la ley, y la violencia, la única forma de sobrevivir. Aquel infierno los convirtió en hermanos y en algo mucho más peligroso.\n\nAños después, los llaman los Huérfanos. Son dueños de un imperio criminal que se extiende desde Irlanda hasta la Costa del Sol. En Marbella han aprendido que el poder no se  se arranca. Pero allí hay otra familia que también conoce el precio del  los Pastor, unidos por silencios y heridas imposibles de cerrar. Y, por encima de todos, moviendo los hilos desde las sombras, está la Hermana Mei, la mujer ante la que incluso las mafias bajan…",
+   "userRating": 0,
+   "dateAdded": "2026-09-28",
+   "shelf": "read"
+  },
+  {
+   "bookId": "243579844",
+   "workId": "268334644",
+   "title": "El amo",
+   "fullTitle": "El amo (Jotadé, #2)",
+   "authorId": "3470161",
+   "author": "Santiago Díaz",
+   "authorImage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1630427921i/3470161._UX200_CR0,50,200,200_.jpg",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1762284767i/243579844.jpg",
+   "genres": [
+    "Thriller",
+    "Spanish Literature",
+    "Suspense",
+    "Crime",
+    "Fiction"
+   ],
+   "series": [
+    {
+     "title": "Jotadé",
+     "url": "https://www.goodreads.com/series/432693-jotad",
+     "position": "2"
+    }
+   ],
+   "pages": 415,
+   "language": "Spanish; Castilian",
+   "year": 2026,
+   "avgRating": 4.5,
+   "ratingsCount": 5650,
+   "description": "Una fría mañana de invierno el cadáver de una adolescente aparece en una parada de autobús del extrarradio madrileño. El equipo del inspector Iván Moreno y del subinspector Jotadé Cortés, el único policía gitano de su comisaría, descubre que se trata de una joven desaparecida misteriosamente años atrás y que ha sido asesinada tras dar a luz. Es la última de una larga lista de secuestradas a las que han matado justo después de ser madres.\r\n\r\nJotadé tiene que enfrentarse a este nuevo caso mientras atraviesa una crisis con Lola, su pareja, e intenta al mismo tiempo ayudar a Lucía, que lidia con un nuevo y turbio incidente en el centro de menores donde ahora reside. Cuando otra chica…",
+   "userRating": 0,
+   "dateAdded": "2026-09-28",
+   "shelf": "read"
+  },
+  {
+   "bookId": "30243012",
+   "workId": "48765776",
+   "title": "Harry Potter y el legado maldito",
+   "fullTitle": "Harry Potter y el legado maldito",
+   "authorId": "5042201",
+   "author": "John Tiffany",
+   "authorImage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/nophoto/user/u_700x933.png",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1470074246i/30243012.jpg",
+   "genres": [
+    "Fantasy",
+    "Fiction",
+    "Harry Potter",
+    "Young Adult",
+    "Plays",
+    "Magic",
+    "Adventure",
+    "Middle Grade",
+    "Drama",
+    "Time Travel"
+   ],
+   "series": [
+    {
+     "title": "Harry Potter",
+     "url": "https://www.goodreads.com/series/45175-harry-potter",
+     "position": "8"
+    }
+   ],
+   "pages": 333,
+   "language": "Spanish; Castilian",
+   "year": 2016,
+   "avgRating": 3.3,
+   "ratingsCount": 1173651,
+   "description": "Diecinueve años después... la octava historia\r\n\r\nSer Harry Potter nunca ha sido tarea fácil, menos aun desde que se ha convertido en un atareadísimo empleado del Ministerio de Magia, un hombre casado y padre de tres hijos.\r\n\r\nMientras Harry planta cara a un pasado que se resiste a quedar atrás, su hijo menor, Albus Severus, ha de luchar contra el peso de una herencia familiar de la que él nunca ha querido saber nada. Cuando el destino conecte el pasado con el presente, padre e hijo deberán afrontar una verdad muy incómoda: a veces, la oscuridad surge de los lugares más insospechados.\r\n\r\nHarry Potter y el legado maldito es una obra de teatro de Jack Thorne basada en una historia original de…",
+   "userRating": 0,
+   "dateAdded": "2026-09-28",
+   "shelf": "to-read"
+  },
+  {
+   "bookId": "21404587",
+   "workId": "40703605",
+   "title": "La historia secreta del señor White",
+   "fullTitle": "La historia secreta del señor White",
+   "authorId": "364872",
+   "author": "Juan Gómez-Jurado",
+   "authorImage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1768120636i/364872._UX200_CR0,0,200,200_.jpg",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394302140i/21404587.jpg",
+   "genres": [
+    "Thriller",
+    "Audiobook",
+    "Crime",
+    "Mystery",
+    "Short Stories",
+    "Spanish Literature",
+    "Ebooks",
+    "Fiction",
+    "Novels",
+    "Suspense"
+   ],
+   "series": [
+    {
+     "title": "Universo Reina Roja",
+     "url": "https://www.goodreads.com/series/264003-universo-reina-roja",
+     "position": "1.5"
+    }
+   ],
+   "pages": 61,
+   "language": "Spanish; Castilian",
+   "year": 2014,
+   "avgRating": 3.63,
+   "ratingsCount": 4032,
+   "description": "Si has leído El Paciente, el espectacular thriller de Juan Gómez-Jurado, esta novela corta te descubrirá muchas de las claves de lo que ocurre con el señor White, el antagonista de la novela. Si no lo has leído, no sabemos qué estás haciendo con tu vida.\r\n\r\n\"Ambiciosa, seductora, especialmente visual\" ABC\r\n\"Conmovedora, Frenética, realmente espectacular\" RNE\r\n\"Treméndamente adictiva\" LECTURÓPATA\r\n\"Trepidante carrera de 63 horas llena de vericuetos morales\" EL MUNDO\r\n\"No hay mejor pantalla de cine que las páginas de El Paciente\" LEERMÁS\r\n\"Relato de infarto con un final redondo\" EL CULTURAL\r\n\"El mejor libro que hemos leído desde La Sombra del Viento\" RADIO 3\r\n\"Los personajes se sienten de…",
+   "userRating": 0,
+   "dateAdded": "2026-09-28",
+   "shelf": "to-read"
+  },
   {
    "bookId": "244171005",
    "workId": "269220427",
@@ -50,39 +182,6 @@
    "avgRating": 4.26,
    "ratingsCount": 64,
    "description": "POR FIN EN UN SOLO VOLUMEN LA SERIE QUE CAMBIÓ PARA SIEMPRE LA NOVELA NEGRA ESPAÑOLA. CON MÁS DE UN MILLÓN Y MEDIO DE LECTORES.\r\n\r\n«Un verdadero descenso a los infiernos».Pilar Castro, El Cultural\r\n\r\n«El lector habrá de abrocharse el cinturón».Juan Carlos Galindo, Babelia\r\n\r\nEn Madrid se mata poco, pero cuando se mata puede convertirse en el peor de los infiernos. Elena Blanco lo sabe. Dirige la Brigada de Análisis de Casos, el departamento que se ocupa de los crímenes más complicados y abyectos. Es una inspectora atípica, ama el karaoke, el sexo con desconocidos en aparcamientos públicos y la grappa. Pero también tiene una cámara oculta en su balcón que graba la calle veinticuatro horas al…",
-   "userRating": 0,
-   "dateAdded": "2026-07-23",
-   "shelf": "to-read"
-  },
-  {
-   "bookId": "243579844",
-   "workId": "268334644",
-   "title": "El amo",
-   "fullTitle": "El amo (Jotadé, #2)",
-   "authorId": "3470161",
-   "author": "Santiago Díaz",
-   "authorImage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1630427921i/3470161._UX200_CR0,50,200,200_.jpg",
-   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1762284767i/243579844.jpg",
-   "genres": [
-    "Thriller",
-    "Spanish Literature",
-    "Suspense",
-    "Crime",
-    "Fiction"
-   ],
-   "series": [
-    {
-     "title": "Jotadé",
-     "url": "https://www.goodreads.com/series/432693-jotad",
-     "position": "2"
-    }
-   ],
-   "pages": 415,
-   "language": "Spanish; Castilian",
-   "year": 2026,
-   "avgRating": 4.5,
-   "ratingsCount": 5650,
-   "description": "Una fría mañana de invierno el cadáver de una adolescente aparece en una parada de autobús del extrarradio madrileño. El equipo del inspector Iván Moreno y del subinspector Jotadé Cortés, el único policía gitano de su comisaría, descubre que se trata de una joven desaparecida misteriosamente años atrás y que ha sido asesinada tras dar a luz. Es la última de una larga lista de secuestradas a las que han matado justo después de ser madres.\r\n\r\nJotadé tiene que enfrentarse a este nuevo caso mientras atraviesa una crisis con Lola, su pareja, e intenta al mismo tiempo ayudar a Lucía, que lidia con un nuevo y turbio incidente en el centro de menores donde ahora reside. Cuando otra chica…",
    "userRating": 0,
    "dateAdded": "2026-07-23",
    "shelf": "to-read"
@@ -139,7 +238,7 @@
    "pages": 278,
    "language": "Spanish; Castilian",
    "year": 2024,
-   "avgRating": 4.31,
+   "avgRating": 4.3,
    "ratingsCount": 723,
    "description": "¿Cuánta destrucción puede generar un monstruo que viene a visitarte en la oscuridad de la noche?Cuando cuatro personas inocentes son tiroteadas una noche de primavera en distintos lugares de la tranquila ciudad de Vigo, el expolicía Lucas Acevedo se siente seguro de que él era el objetivo último de aquel ataque.Empezará entonces una frenética y obsesiva búsqueda por encontrar al culpable y en la que acabará por descubrir que no todos son tan inocentes como parecía en un principio.",
    "userRating": 0,
@@ -1475,7 +1574,7 @@
    "pages": 370,
    "language": "English",
    "year": 2020,
-   "avgRating": 3.4,
+   "avgRating": 3.39,
    "ratingsCount": 195659,
    "description": "An unexpected quest. Two worlds at stake. Are you ready?\r\n\r\nDays after winning Oasis founder James Halliday's contest, Wade Watts makes a discovery that changes everything. \r\n\r\nHidden within Halliday's vaults, waiting for his heir to find, lies a technological advancement that will once again change the world and make the Oasis a thousand times more wondrous—and addictive—than even Wade dreamed possible. \r\n\r\nWith it comes a new riddle, and a new quest—a last Easter egg from Halliday, hinting at a mysterious prize. \r\n\r\nAnd an unexpected, impossibly powerful, and dangerous new rival awaits, one who'll kill millions to get what he wants. \r\n\r\nWade's life and the future of the Oasis are again at…",
    "userRating": 0,
@@ -2102,7 +2201,7 @@
    "pages": 441,
    "language": "Spanish; Castilian",
    "year": 2018,
-   "avgRating": 3.86,
+   "avgRating": 3.85,
    "ratingsCount": 19527,
    "description": "Vitoria, 2019. Los señores del tiempo, una épica novela histórica ambientada en el medievo, se publica con gran éxito bajo un misterioso pseudónimo: Diego Veilaz.\r\n\r\nVictoria, 1192. Diago Vela, el legendario conde don Vela, retorna a su villa después de dos años en una peligrosa misión encomendada por el rey Sancho VI el Sabio de Navarra y encuentra a su hermano Nagorno desposado con la que era su prometida, la noble e intrigante Onneca de Maestu.\r\n\r\nUnai López de Ayala, Kraken, se enfrenta a unas desconcertantes muertes que siguen un modus operandi medieval. Son idénticas a los asesinatos descritos en la novela Los señores del tiempo: un envenenamiento con la «mosca española» ―la Viagra…",
    "userRating": 0,
@@ -2409,7 +2508,7 @@
    "pages": 661,
    "language": "Spanish; Castilian",
    "year": 2021,
-   "avgRating": 4.23,
+   "avgRating": 4.22,
    "ratingsCount": 10186,
    "description": "¿Puede una noche marcar el destino de todos los que la vivieron? Han pasado más de veinte años desde que Diego Letamendia, estrella del rock en declive, actuó por última vez en su pueblo natal, Illumbe. Esa fue la noche del final de su banda y su grupo de amigos, y también la de la desaparición de Lorea, su novia. La policía nunca logró esclarecer lo ocurrido con la chica, que fue vista saliendo a toda prisa de la sala de conciertos, como si huyera de algo o de alguien. Después de aquello, Diego emprendió una carrera de éxitos en solitario y jamás regresó al pueblo.\r\n\r\nCuando uno de los miembros de la banda muere en un extraño incendio, Diego decide volver a Illumbe. Han pasado muchos años…",
    "userRating": 0,
@@ -3401,130 +3500,13 @@
  ],
  "authors": [
   {
-   "id": "mikel-santiago",
-   "authorId": "4181046",
-   "name": "Mikel Santiago",
-   "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1642698827i/4181046._UY200_CR50,0,200,200_.jpg",
-   "bookIds": [
-    "22430367",
-    "25499384",
-    "34651562",
-    "40719362",
-    "52190954",
-    "57895404",
-    "60867895",
-    "199346161",
-    "217353954",
-    "241245503"
-   ],
-   "suggestions": [
-    {
-     "bookId": "8814834",
-     "workId": "13689132",
-     "title": "Historia de un crimen perfecto",
-     "fullTitle": "Historia de un crimen perfecto",
-     "authorId": "4181046",
-     "author": "Mikel Santiago",
-     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1426795125i/8814834.jpg",
-     "genres": [
-      "Thriller",
-      "Fiction",
-      "Short Stories",
-      "Mystery",
-      "Crime",
-      "Spain",
-      "Suspense",
-      "Audiobook",
-      "Novels"
-     ],
-     "pages": 47,
-     "year": 2010,
-     "avgRating": 3.68,
-     "ratingsCount": 1191,
-     "description": "Me llamo Eric Rot y escribo estas últimas líneas de mi vida para  Soy un asesino.\r\n\r\n\r\nYo lo hice. La maté. Linda Fitzwilliams está muerta. Ni huida con su amante, ni jugando a esconderse para irritar a su familia, como apuntaron en su momento las revistas del mundo rosa...",
-     "language": "Spanish; Castilian"
-    },
-    {
-     "bookId": "9817990",
-     "workId": "14708482",
-     "title": "La isla de los cien ojos",
-     "fullTitle": "La isla de los cien ojos",
-     "authorId": "4181046",
-     "author": "Mikel Santiago",
-     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1302026321i/9817990.jpg",
-     "genres": [
-      "Horror",
-      "Thriller"
-     ],
-     "pages": 52,
-     "year": 2010,
-     "avgRating": 3.46,
-     "ratingsCount": 367,
-     "description": "Irlanda, principios de siglo. La tormenta ha arrastrado un viejo bote de salvamento hasta las playas del pequeño pueblo de Dowan. Un aristócrata y el doctor del pueblo se deciden a investigar un terrible secreto escrito sobre la madera de sus bancos...",
-     "language": "Spanish; Castilian"
-    },
-    {
-     "bookId": "19219833",
-     "workId": "27264148",
-     "title": "Noche de almas",
-     "fullTitle": "Noche de almas",
-     "authorId": "4181046",
-     "author": "Mikel Santiago",
-     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1437456709i/19219833.jpg",
-     "genres": [
-      "Thriller",
-      "Suspense",
-      "Horror"
-     ],
-     "pages": 164,
-     "year": 2013,
-     "avgRating": 3.43,
-     "ratingsCount": 319,
-     "description": "La casa apareció justo cuando Daniel y Pía iban a perder las esperanzas, durante su viaje de mochileros a través de un inclemente desierto sudamericano. Una vieja guía de viajes les había llevado hasta allí, pero cuando llegan, los extraños habitantes del lugar se muestran reacios a dejarles pasar. \"La fonda lleva cerrada muchos años\" les dicen. ﻿ Un misterioso círculo de piedras, ventanas cerradas y una sola  \"No salir por la noche\" Noches que se inundan de antiguas pesadillas que parecían olvidadas y sonidos y sombras en el exterior. Daniel y Pía descubrirán muy pronto que jamás debieron cruzar el desierto durante la noche de almas",
-     "language": "Spanish; Castilian"
-    },
-    {
-     "bookId": "8814833",
-     "workId": "13689131",
-     "title": "El perro negro",
-     "fullTitle": "El perro negro",
-     "authorId": "4181046",
-     "author": "Mikel Santiago",
-     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1281390669i/8814833.jpg",
-     "genres": [
-      "Thriller"
-     ],
-     "pages": 44,
-     "year": 2010,
-     "avgRating": 3.29,
-     "ratingsCount": 248,
-     "description": "El viejo soldado tiene una historia que contar. Una historia que comenzó en el horror de la Segunda Guerra Mundial pero que ahora viaja a través del tiempo, buscándole, reclamándole una vieja deuda.\r\nPaul, el joven enfermero del sanatorio, es su único amigo y confesor.",
-     "language": "Spanish; Castilian"
-    },
-    {
-     "bookId": "51281676",
-     "workId": "71859465",
-     "title": "La huella: Relatos",
-     "fullTitle": "La huella: Relatos",
-     "authorId": "4181046",
-     "author": "Mikel Santiago",
-     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1562704017l/51281676.jpg",
-     "pages": 330,
-     "year": 2019,
-     "avgRating": 3.93,
-     "ratingsCount": 198,
-     "description": "\"Me llamo Eric Rot y escribo estas últimas líneas de mi vida para confesarme: soy un asesino.Yo lo hice. La maté. Linda Fitzwilliam está muerta. Ni huida con su amante, ni jugando a esconderse para irritar a su familia, como apuntaron en su momento las revistas del mundo rosa. La hija del magnate John Fitzwilliam, mi jefe y amigo durante los últimos 20 años, murió estrangulada la noche del 13 de agosto de hace cinco años, en París. Esa es la verdad.\"Así comienza HISTORIA DE UN CRIMEN PERFECTO el relato de cabecera de esta colección que reúne los primeros relatos de Mikel Santiago. Con estas piezas, inicialmente publicadas en un blog para amigos y lectores casuales, Mikel consiguió llegar a…",
-     "language": "Spanish; Castilian"
-    }
-   ]
-  },
-  {
    "id": "juan-gomez-jurado",
    "authorId": "364872",
    "name": "Juan Gómez-Jurado",
    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1768120636i/364872._UX200_CR0,0,200,200_.jpg",
    "bookIds": [
     "20426394",
+    "21404587",
     "27420709",
     "41743264",
     "46202074",
@@ -3660,40 +3642,6 @@
      "originalTitle": "The Traitor's Emblem"
     },
     {
-     "bookId": "21404587",
-     "workId": "40703605",
-     "title": "La historia secreta del señor White",
-     "fullTitle": "La historia secreta del señor White",
-     "authorId": "364872",
-     "author": "Juan Gómez-Jurado",
-     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394302140i/21404587.jpg",
-     "genres": [
-      "Thriller",
-      "Audiobook",
-      "Crime",
-      "Mystery",
-      "Short Stories",
-      "Spanish Literature",
-      "Ebooks",
-      "Fiction",
-      "Novels",
-      "Suspense"
-     ],
-     "series": [
-      {
-       "title": "Universo Reina Roja",
-       "url": "https://www.goodreads.com/series/264003-universo-reina-roja",
-       "position": "1.5"
-      }
-     ],
-     "pages": 61,
-     "year": 2014,
-     "avgRating": 3.62,
-     "ratingsCount": 4032,
-     "description": "Si has leído El Paciente, el espectacular thriller de Juan Gómez-Jurado, esta novela corta te descubrirá muchas de las claves de lo que ocurre con el señor White, el antagonista de la novela. Si no lo has leído, no sabemos qué estás haciendo con tu vida.\r\n\r\n\"Ambiciosa, seductora, especialmente visual\" ABC\r\n\"Conmovedora, Frenética, realmente espectacular\" RNE\r\n\"Treméndamente adictiva\" LECTURÓPATA\r\n\"Trepidante carrera de 63 horas llena de vericuetos morales\" EL MUNDO\r\n\"No hay mejor pantalla de cine que las páginas de El Paciente\" LEERMÁS\r\n\"Relato de infarto con un final redondo\" EL CULTURAL\r\n\"El mejor libro que hemos leído desde La Sombra del Viento\" RADIO 3\r\n\"Los personajes se sienten de…",
-     "language": "Spanish; Castilian"
-    },
-    {
      "bookId": "56031296",
      "workId": "87271686",
      "title": "Una herencia peligrosa",
@@ -3781,6 +3729,211 @@
      "ratingsCount": 798,
      "description": "Llega el tercer libro de la colección «Amanda Black», la nueva serie para niños de Juan Gómez-Jurado y Bárbara Montes. Aventuras repletas de misterio, acción trepidante y un ritmo frenético . «Su final es tu principio.» Desde que heredó sus poderes, Amanda no ha tenido ni un momento de  entrenos, deberes, misiones... Pero todo está a punto de cambiar, porque por primera vez ha decidido tomarse el día libre para asistir al baile del instituto. Se comprará un vestido bonito, le pedirá a Jason que la acompañe y todo será genial. ¡El sueño de cualquier adolescente! Sin embargo, las cosas nunca son como una quiere. La mañana del baile, la tía Paula le encomienda a Amanda una misió evitar que una…",
      "language": "Spanish; Castilian"
+    },
+    {
+     "bookId": "220478484",
+     "workId": "227418555",
+     "title": "La navaja suiza",
+     "fullTitle": "La navaja suiza",
+     "authorId": "364872",
+     "author": "Juan Gómez-Jurado",
+     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729096631i/220478484.jpg",
+     "genres": [
+      "Thriller",
+      "Short Stories"
+     ],
+     "pages": 34,
+     "year": 2024,
+     "avgRating": 3.68,
+     "ratingsCount": 835,
+     "description": "Si te has introducido en el Universo Reina Roja, te sonará el nombre del Señor White.\r\n\r\nEsta novela te descubre alguna de las claves del personaje más oscuro, pero quizá más presente, de los libros de Juan Gómez-Jurado.",
+     "language": "Spanish; Castilian"
+    }
+   ]
+  },
+  {
+   "id": "mikel-santiago",
+   "authorId": "4181046",
+   "name": "Mikel Santiago",
+   "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1642698827i/4181046._UY200_CR50,0,200,200_.jpg",
+   "bookIds": [
+    "22430367",
+    "25499384",
+    "34651562",
+    "40719362",
+    "52190954",
+    "57895404",
+    "60867895",
+    "199346161",
+    "217353954",
+    "241245503"
+   ],
+   "suggestions": [
+    {
+     "bookId": "8814834",
+     "workId": "13689132",
+     "title": "Historia de un crimen perfecto",
+     "fullTitle": "Historia de un crimen perfecto",
+     "authorId": "4181046",
+     "author": "Mikel Santiago",
+     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1426795125i/8814834.jpg",
+     "genres": [
+      "Thriller",
+      "Fiction",
+      "Short Stories",
+      "Mystery",
+      "Crime",
+      "Spain",
+      "Suspense",
+      "Audiobook",
+      "Novels"
+     ],
+     "pages": 47,
+     "year": 2010,
+     "avgRating": 3.68,
+     "ratingsCount": 1191,
+     "description": "Me llamo Eric Rot y escribo estas últimas líneas de mi vida para  Soy un asesino.\r\n\r\n\r\nYo lo hice. La maté. Linda Fitzwilliams está muerta. Ni huida con su amante, ni jugando a esconderse para irritar a su familia, como apuntaron en su momento las revistas del mundo rosa...",
+     "language": "Spanish; Castilian"
+    },
+    {
+     "bookId": "9817990",
+     "workId": "14708482",
+     "title": "La isla de los cien ojos",
+     "fullTitle": "La isla de los cien ojos",
+     "authorId": "4181046",
+     "author": "Mikel Santiago",
+     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1302026321i/9817990.jpg",
+     "genres": [
+      "Horror",
+      "Thriller"
+     ],
+     "pages": 52,
+     "year": 2010,
+     "avgRating": 3.46,
+     "ratingsCount": 367,
+     "description": "Irlanda, principios de siglo. La tormenta ha arrastrado un viejo bote de salvamento hasta las playas del pequeño pueblo de Dowan. Un aristócrata y el doctor del pueblo se deciden a investigar un terrible secreto escrito sobre la madera de sus bancos...",
+     "language": "Spanish; Castilian"
+    },
+    {
+     "bookId": "19219833",
+     "workId": "27264148",
+     "title": "Noche de almas",
+     "fullTitle": "Noche de almas",
+     "authorId": "4181046",
+     "author": "Mikel Santiago",
+     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1437456709i/19219833.jpg",
+     "genres": [
+      "Thriller",
+      "Suspense",
+      "Horror"
+     ],
+     "pages": 164,
+     "year": 2013,
+     "avgRating": 3.43,
+     "ratingsCount": 319,
+     "description": "La casa apareció justo cuando Daniel y Pía iban a perder las esperanzas, durante su viaje de mochileros a través de un inclemente desierto sudamericano. Una vieja guía de viajes les había llevado hasta allí, pero cuando llegan, los extraños habitantes del lugar se muestran reacios a dejarles pasar. \"La fonda lleva cerrada muchos años\" les dicen. ﻿ Un misterioso círculo de piedras, ventanas cerradas y una sola  \"No salir por la noche\" Noches que se inundan de antiguas pesadillas que parecían olvidadas y sonidos y sombras en el exterior. Daniel y Pía descubrirán muy pronto que jamás debieron cruzar el desierto durante la noche de almas",
+     "language": "Spanish; Castilian"
+    },
+    {
+     "bookId": "8814833",
+     "workId": "13689131",
+     "title": "El perro negro",
+     "fullTitle": "El perro negro",
+     "authorId": "4181046",
+     "author": "Mikel Santiago",
+     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1281390669i/8814833.jpg",
+     "genres": [
+      "Thriller"
+     ],
+     "pages": 44,
+     "year": 2010,
+     "avgRating": 3.29,
+     "ratingsCount": 248,
+     "description": "El viejo soldado tiene una historia que contar. Una historia que comenzó en el horror de la Segunda Guerra Mundial pero que ahora viaja a través del tiempo, buscándole, reclamándole una vieja deuda.\r\nPaul, el joven enfermero del sanatorio, es su único amigo y confesor.",
+     "language": "Spanish; Castilian"
+    },
+    {
+     "bookId": "51281676",
+     "workId": "71859465",
+     "title": "La huella: Relatos",
+     "fullTitle": "La huella: Relatos",
+     "authorId": "4181046",
+     "author": "Mikel Santiago",
+     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1562704017l/51281676.jpg",
+     "pages": 330,
+     "year": 2019,
+     "avgRating": 3.93,
+     "ratingsCount": 198,
+     "description": "\"Me llamo Eric Rot y escribo estas últimas líneas de mi vida para confesarme: soy un asesino.Yo lo hice. La maté. Linda Fitzwilliam está muerta. Ni huida con su amante, ni jugando a esconderse para irritar a su familia, como apuntaron en su momento las revistas del mundo rosa. La hija del magnate John Fitzwilliam, mi jefe y amigo durante los últimos 20 años, murió estrangulada la noche del 13 de agosto de hace cinco años, en París. Esa es la verdad.\"Así comienza HISTORIA DE UN CRIMEN PERFECTO el relato de cabecera de esta colección que reúne los primeros relatos de Mikel Santiago. Con estas piezas, inicialmente publicadas en un blog para amigos y lectores casuales, Mikel consiguió llegar a…",
+     "language": "Spanish; Castilian"
+    }
+   ]
+  },
+  {
+   "id": "carmen-mola",
+   "authorId": "17883260",
+   "name": "Carmen Mola",
+   "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1676762135i/17883260.jpg",
+   "bookIds": [
+    "39651837",
+    "44284989",
+    "50273222",
+    "61277726",
+    "214507008",
+    "217354367",
+    "254000603"
+   ],
+   "suggestions": [
+    {
+     "bookId": "59430776",
+     "workId": "93611481",
+     "title": "La bestia",
+     "fullTitle": "La bestia",
+     "authorId": "17883260",
+     "author": "Carmen Mola",
+     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1634908927i/59430776.jpg",
+     "genres": [
+      "Thriller",
+      "Historical Fiction",
+      "Audiobook",
+      "Crime",
+      "Spanish Literature",
+      "Fiction",
+      "Ebooks",
+      "Suspense",
+      "Mystery",
+      "Historical"
+     ],
+     "pages": 544,
+     "year": 2021,
+     "avgRating": 3.76,
+     "ratingsCount": 21689,
+     "description": "Premio Planeta 2021\r\n\r\nCorre el año 1834 y Madrid, una pequeña ciudad que trata de abrirse paso más allá de las murallas que la rodean, sufre una terrible epidemia de cólera. Pero la peste no es lo único que aterroriza a sus habitantes: en los arrabales aparecen cadáveres desmembrados de niñas que nadie reclama. Todos los rumores apuntan a la Bestia, un ser a quien nadie ha visto pero al que todos temen.\r\n\r\nCuando la pequeña Clara desaparece, su hermana Lucía, junto con Donoso, un policía tuerto, y Diego, un periodista buscavidas, inician una frenética cuenta atrás para encontrar a la niña con vida. En su camino tropiezan con fray Braulio, un monje guerrillero, y con un misterioso anillo de…",
+     "language": "Spanish; Castilian"
+    },
+    {
+     "bookId": "168381063",
+     "workId": "177987008",
+     "title": "El infierno",
+     "fullTitle": "El infierno",
+     "authorId": "17883260",
+     "author": "Carmen Mola",
+     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1685490059i/168381063.jpg",
+     "genres": [
+      "Thriller",
+      "Audiobook",
+      "Fiction",
+      "Suspense",
+      "Spanish Literature",
+      "Mystery",
+      "Historical Fiction"
+     ],
+     "pages": 480,
+     "year": 2023,
+     "avgRating": 3.36,
+     "ratingsCount": 5465,
+     "description": "Lo que parecía un paraíso se terminó convirtiendo en un infierno. Una novela negra impactante y perturbadora al más puro estilo Carmen Mola. Un terrible levantamiento del ejército contra la reina Isabel II tiñe de sangre y muertos las calles de Madrid y el horror campa por toda la ciudad. Entre cañonazos y disparos, una bailarina llamada Leonor y Mauro, un estudiante de Medicina, se ven envueltos en un homicidio que marcará sus vidas.\r\nPara evitar la prisión o la muerte, Leonor se ve obligada a huir a La Habana, pero, al llegar allí, este supuesto paraíso no es lo que espera. Las plantaciones de azúcar y los ingenios esconden la tragedia de un esclavismo aún muy vivo. Y, entre los esclavos,…",
+     "language": "Spanish; Castilian"
     }
    ]
   },
@@ -3833,41 +3986,6 @@
     "2366001"
    ],
    "suggestions": [
-    {
-     "bookId": "30243012",
-     "workId": "48765776",
-     "title": "Harry Potter y el legado maldito",
-     "fullTitle": "Harry Potter y el legado maldito",
-     "authorId": "1077326",
-     "author": "J.K. Rowling",
-     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1470074246l/30243012.jpg",
-     "genres": [
-      "Fantasy",
-      "Fiction",
-      "Harry Potter",
-      "Young Adult",
-      "Plays",
-      "Magic",
-      "Adventure",
-      "Middle Grade",
-      "Drama",
-      "Time Travel"
-     ],
-     "series": [
-      {
-       "title": "Harry Potter",
-       "url": "https://www.goodreads.com/series/45175-harry-potter",
-       "position": "8"
-      }
-     ],
-     "pages": 343,
-     "year": 2016,
-     "avgRating": 3.47,
-     "ratingsCount": 1173433,
-     "description": "The eighth story, nineteen years later...\r\n\r\nIt was always difficult being Harry Potter, and it isn't much easier now that he is an overworked employee of the Ministry of Magic, a husband, and a father of three school-age children.\r\n\r\nWhile Harry grapples with a past that refuses to stay where it belongs, his youngest son, Albus, must struggle with the weight of a family legacy he never wanted. As past and present fuse ominously, both father and son learn the uncomfortable truth: sometimes, darkness comes from unexpected places.\r\n\r\nBased on an original new story by J.K. Rowling, Jack Thorne, and John Tiffany, a new play by Jack Thorne, \"Harry Potter and the Cursed Child\" is the complete and…",
-     "language": "Spanish",
-     "originalTitle": "Harry Potter and the Cursed Child: Parts One and Two"
-    },
     {
      "bookId": "5974622",
      "workId": "3007490",
@@ -4091,6 +4209,41 @@
      "description": "'No Muggle Prime Minister has ever set foot in the Ministry of Magic, for reasons most succinctly summed up by ex-Minister Dugald McPhail (term of office 1858-1865): “their puir wee braines couldnae cope wi’ it.”’ – J.K. Rowling\r\n\r\nPottermore Presents is a collection of J.K. Rowling’s writing: short reads originally featured on pottermore.com with some exclusive new additions. These eBooks, with writing curated by Pottermore, will take you beyond the Harry Potter stories as J.K. Rowling reveals her inspiration, intricate details of characters’ lives and surprises from the wizarding world.\r\n\r\nThese stories of power, politics and pesky poltergeists give you a glimpse into the darker side of…",
      "language": "Spanish",
      "originalTitle": "Short Stories from Hogwarts of Power, Politics and Pesky Poltergeists"
+    },
+    {
+     "bookId": "31540509",
+     "workId": "52218770",
+     "title": "Hogwarts: una guía incompleta y poco fiable",
+     "fullTitle": "Hogwarts: una guía incompleta y poco fiable (Pottermore presenta, #3)",
+     "authorId": "1077326",
+     "author": "J.K. Rowling",
+     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471443880l/31540509.jpg",
+     "genres": [
+      "Fantasy",
+      "Harry Potter",
+      "Fiction",
+      "Short Stories",
+      "Young Adult",
+      "Magic",
+      "Ebooks",
+      "Childrens",
+      "Middle Grade",
+      "Witches"
+     ],
+     "series": [
+      {
+       "title": "Pottermore Presents",
+       "url": "https://www.goodreads.com/series/186873-pottermore-presents",
+       "position": "3"
+      }
+     ],
+     "pages": 85,
+     "year": 2016,
+     "avgRating": 4.18,
+     "ratingsCount": 33676,
+     "description": "‘The Ministry of Magic felt strongly, however, that to construct an additional wizarding station in the middle of London would stretch even the Muggles’ notorious determination not to notice magic when it was exploding in front of their faces.’ – J.K. Rowling\r\n\r\nPottermore Presents is a collection of J.K. Rowling’s writing: short reads originally featured on pottermore.com. These eBooks, with writing curated by Pottermore, will take you beyond the Harry Potter stories as J.K. Rowling reveals her inspiration, intricate details of characters’ lives and surprises from the wizarding world.\r\n\r\nHogwarts An Incomplete and Unreliable Guide takes you on a journey to Hogwarts School of Witchcraft and…",
+     "language": "Spanish",
+     "originalTitle": "Hogwarts: An Incomplete and Unreliable Guide"
     }
    ]
   },
@@ -4171,6 +4324,43 @@
      "description": "#1 New York Times bestselling author Dan Brown makes his picture book debut with this mindful, humorous, musical, and uniquely entertaining book!\r\n\r\nThe author will be donating all US royalties due to him to support music education for children worldwide, through the New Hampshire Charitable foundation.\r\n\r\nTravel through the trees and across the seas with Maestro Mouse and his musical friends! Young readers will meet a big blue whale and speedy cheetahs, tiny beetles and graceful swans. Each has a special secret to share.\r\n\r\nAlong the way, you might spot the surprises Maestro Mouse has left for you- a hiding buzzy bee, jumbled letters that spell out clues, and even a coded message to…",
      "language": "Spanish",
      "originalTitle": "Wild Symphony"
+    }
+   ]
+  },
+  {
+   "id": "santiago-diaz",
+   "authorId": "3470161",
+   "name": "Santiago Díaz",
+   "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1630427921i/3470161._UX200_CR0,50,200,200_.jpg",
+   "bookIds": [
+    "38966507",
+    "56022281",
+    "59455555",
+    "63266154",
+    "222340862",
+    "243579844"
+   ],
+   "suggestions": [
+    {
+     "bookId": "206801452",
+     "workId": "212878341",
+     "title": "Los nueve reinos",
+     "fullTitle": "Los nueve reinos",
+     "authorId": "3470161",
+     "author": "Santiago Díaz",
+     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1715067526i/206801452.jpg",
+     "genres": [
+      "Historical Fiction",
+      "Thriller",
+      "Spanish Literature",
+      "Fiction"
+     ],
+     "pages": 576,
+     "year": 2024,
+     "avgRating": 4.29,
+     "ratingsCount": 2101,
+     "description": "«Es mejor morir con dignidad que vivir esclavizados».\r\n\r\nSiglo I a.C. Tras amotinarse en el barco en el que los trasladaban los romanos, un grupo de prisioneros de guerra africanos y sus mujeres son arrastrados por las corrientes a la isla de Tenerife. Durante mil quinientos años, sus descendientes crean allí una civilización aislada del resto del mundo, hasta que los nueve reinos que componen el territorio guanche se convierten en objetivo de los Reyes Católicos. La sangre se derramará de norte a sur de la isla en esta gran aventura que rememora traiciones, sacrificios y pasiones prohibidas para contar la historia de una estirpe guerrera liderada por el mencey Bencomo, rey de reyes, que…",
+     "language": "Spanish; Castilian"
     }
    ]
   },
@@ -4436,128 +4626,6 @@
      "description": "Acclaimed author Arturo Perez-Reverte s internationally bestselling series, the saga of the swordsman-for-hire Captain Alatriste, continues in\"The Sun Over Breda.\" Fifteen-year-old Inigo Balboa enlists to serve as his master s aide, and narrates their further adventures of swordplay and skirmishes, mutiny and wartime honor, as Captain Alatriste rejoins his Cartagena regiment to take part in the battles and siege of Breda. In Spain, Alatriste s nemesis, Luis de Alquezar, grows more powerful, as Inigo s mysterious friend Angelica hints at some plans upon his return. Once again the exploits of the seventeenth-century mercenary will thrill and delight the legions of readers eager to cheer a…",
      "language": "Spanish",
      "originalTitle": "The Sun Over Breda"
-    }
-   ]
-  },
-  {
-   "id": "carmen-mola",
-   "authorId": "17883260",
-   "name": "Carmen Mola",
-   "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1676762135i/17883260.jpg",
-   "bookIds": [
-    "39651837",
-    "44284989",
-    "50273222",
-    "61277726",
-    "214507008",
-    "217354367"
-   ],
-   "suggestions": [
-    {
-     "bookId": "59430776",
-     "workId": "93611481",
-     "title": "La bestia",
-     "fullTitle": "La bestia",
-     "authorId": "17883260",
-     "author": "Carmen Mola",
-     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1634908927i/59430776.jpg",
-     "genres": [
-      "Thriller",
-      "Historical Fiction",
-      "Audiobook",
-      "Crime",
-      "Spanish Literature",
-      "Fiction",
-      "Ebooks",
-      "Suspense",
-      "Mystery",
-      "Historical"
-     ],
-     "pages": 544,
-     "year": 2021,
-     "avgRating": 3.76,
-     "ratingsCount": 21689,
-     "description": "Premio Planeta 2021\r\n\r\nCorre el año 1834 y Madrid, una pequeña ciudad que trata de abrirse paso más allá de las murallas que la rodean, sufre una terrible epidemia de cólera. Pero la peste no es lo único que aterroriza a sus habitantes: en los arrabales aparecen cadáveres desmembrados de niñas que nadie reclama. Todos los rumores apuntan a la Bestia, un ser a quien nadie ha visto pero al que todos temen.\r\n\r\nCuando la pequeña Clara desaparece, su hermana Lucía, junto con Donoso, un policía tuerto, y Diego, un periodista buscavidas, inician una frenética cuenta atrás para encontrar a la niña con vida. En su camino tropiezan con fray Braulio, un monje guerrillero, y con un misterioso anillo de…",
-     "language": "Spanish; Castilian"
-    },
-    {
-     "bookId": "168381063",
-     "workId": "177987008",
-     "title": "El infierno",
-     "fullTitle": "El infierno",
-     "authorId": "17883260",
-     "author": "Carmen Mola",
-     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1685490059i/168381063.jpg",
-     "genres": [
-      "Thriller",
-      "Audiobook",
-      "Fiction",
-      "Suspense",
-      "Spanish Literature",
-      "Mystery",
-      "Historical Fiction"
-     ],
-     "pages": 480,
-     "year": 2023,
-     "avgRating": 3.36,
-     "ratingsCount": 5465,
-     "description": "Lo que parecía un paraíso se terminó convirtiendo en un infierno. Una novela negra impactante y perturbadora al más puro estilo Carmen Mola. Un terrible levantamiento del ejército contra la reina Isabel II tiñe de sangre y muertos las calles de Madrid y el horror campa por toda la ciudad. Entre cañonazos y disparos, una bailarina llamada Leonor y Mauro, un estudiante de Medicina, se ven envueltos en un homicidio que marcará sus vidas.\r\nPara evitar la prisión o la muerte, Leonor se ve obligada a huir a La Habana, pero, al llegar allí, este supuesto paraíso no es lo que espera. Las plantaciones de azúcar y los ingenios esconden la tragedia de un esclavismo aún muy vivo. Y, entre los esclavos,…",
-     "language": "Spanish; Castilian"
-    },
-    {
-     "bookId": "254000603",
-     "workId": "295764725",
-     "title": "Los huérfanos",
-     "fullTitle": "Los huérfanos",
-     "authorId": "17883260",
-     "author": "Carmen Mola",
-     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1781608005i/254000603.jpg",
-     "genres": [
-      "Thriller"
-     ],
-     "pages": 448,
-     "year": 2026,
-     "avgRating": 4.01,
-     "ratingsCount": 359,
-     "description": "Hay heridas que no se cierran. Y de ellas nacen los monstruos.\n\nEn Belfast, tres niños crecieron en un orfanato donde el miedo era la ley, y la violencia, la única forma de sobrevivir. Aquel infierno los convirtió en hermanos y en algo mucho más peligroso.\n\nAños después, los llaman los Huérfanos. Son dueños de un imperio criminal que se extiende desde Irlanda hasta la Costa del Sol. En Marbella han aprendido que el poder no se  se arranca. Pero allí hay otra familia que también conoce el precio del  los Pastor, unidos por silencios y heridas imposibles de cerrar. Y, por encima de todos, moviendo los hilos desde las sombras, está la Hermana Mei, la mujer ante la que incluso las mafias bajan…",
-     "language": "Spanish; Castilian"
-    }
-   ]
-  },
-  {
-   "id": "santiago-diaz",
-   "authorId": "3470161",
-   "name": "Santiago Díaz",
-   "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1630427921i/3470161._UX200_CR0,50,200,200_.jpg",
-   "bookIds": [
-    "38966507",
-    "56022281",
-    "59455555",
-    "63266154",
-    "222340862",
-    "243579844"
-   ],
-   "suggestions": [
-    {
-     "bookId": "206801452",
-     "workId": "212878341",
-     "title": "Los nueve reinos",
-     "fullTitle": "Los nueve reinos",
-     "authorId": "3470161",
-     "author": "Santiago Díaz",
-     "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1715067526i/206801452.jpg",
-     "genres": [
-      "Historical Fiction",
-      "Thriller",
-      "Spanish Literature",
-      "Fiction"
-     ],
-     "pages": 576,
-     "year": 2024,
-     "avgRating": 4.29,
-     "ratingsCount": 2101,
-     "description": "«Es mejor morir con dignidad que vivir esclavizados».\r\n\r\nSiglo I a.C. Tras amotinarse en el barco en el que los trasladaban los romanos, un grupo de prisioneros de guerra africanos y sus mujeres son arrastrados por las corrientes a la isla de Tenerife. Durante mil quinientos años, sus descendientes crean allí una civilización aislada del resto del mundo, hasta que los nueve reinos que componen el territorio guanche se convierten en objetivo de los Reyes Católicos. La sangre se derramará de norte a sur de la isla en esta gran aventura que rememora traiciones, sacrificios y pasiones prohibidas para contar la historia de una estirpe guerrera liderada por el mencey Bencomo, rey de reyes, que…",
-     "language": "Spanish; Castilian"
     }
    ]
   },
@@ -9802,9 +9870,34 @@
      "language": "German"
     }
    ]
+  },
+  {
+   "id": "john-tiffany",
+   "authorId": "5042201",
+   "name": "John Tiffany",
+   "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/nophoto/user/u_700x933.png",
+   "bookIds": [
+    "30243012"
+   ],
+   "suggestions": []
   }
  ],
  "series": [
+  {
+   "id": "jotade-432693",
+   "title": "Jotadé",
+   "url": "https://www.goodreads.com/series/432693-jotad",
+   "entries": [
+    {
+     "position": "1",
+     "bookId": "222340862"
+    },
+    {
+     "position": "2",
+     "bookId": "243579844"
+    }
+   ]
+  },
   {
    "id": "4mk-thriller-210762",
    "title": "4MK Thriller",
@@ -10091,24 +10184,7 @@
     },
     {
      "position": "8",
-     "suggestion": {
-      "bookId": "30243012",
-      "workId": "48765776",
-      "title": "Harry Potter y el legado maldito",
-      "fullTitle": "Harry Potter y el legado maldito",
-      "authorId": "1077326",
-      "author": "J.K. Rowling",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1470074246l/30243012.jpg",
-      "pages": 343,
-      "avgRating": 3.47,
-      "ratingsCount": 1173432,
-      "year": 2016,
-      "description": "The eighth story, nineteen years later...\n\nIt was always difficult being Harry Potter, and it isn't much easier now that he is an overworked employee of the Ministry of Magic, a husband, and a father of three school-age children.\n\nWhile Harry grapples with a past that refuses to stay where it belongs, his youngest son, Albus, must struggle with the weight of a family legacy he never wanted. As…",
-      "toBePublished": false,
-      "position": "8",
-      "originalTitle": "Harry Potter and the Cursed Child: Parts One and Two",
-      "language": "Spanish"
-     }
+     "bookId": "30243012"
     }
    ]
   },
@@ -10430,6 +10506,10 @@
      "bookId": "20426394"
     },
     {
+     "position": "1.5",
+     "bookId": "21404587"
+    },
+    {
      "position": "2",
      "bookId": "27420709"
     },
@@ -10551,21 +10631,6 @@
       "originalTitle": "El ángel de la ciudad",
       "language": "Spanish"
      }
-    }
-   ]
-  },
-  {
-   "id": "jotade-432693",
-   "title": "Jotadé",
-   "url": "https://www.goodreads.com/series/432693-jotad",
-   "entries": [
-    {
-     "position": "1",
-     "bookId": "222340862"
-    },
-    {
-     "position": "2",
-     "bookId": "243579844"
     }
    ]
   },
@@ -11092,12 +11157,12 @@
    "ratingsCount": 7883,
    "description": "A sus dieciséis años, Belén Villalba es carismática, inteligente y, por supuesto, buena hija. Pero una gélida noche de enero desaparece en Almansa, una apacible localidad manchega. La capitán de la UCO Alma Ortega, una mujer reservada y meticulosa que está pasando por uno de los momentos más difíciles de su vida, se ve obligada a abandonar Madrid y regresar a su pueblo natal para coger las riendas de la investigación. Ahí tendrá que trabajar codo a codo con la teniente al cargo del caso, su hermana mayor, con quien guarda una relación de rivalidad llena de heridas sin cicatrizar. También conocerá a Irene, la mejor amiga de Belén, una hacker adolescente con serios problemas sociales; y a…",
    "language": "Spanish; Castilian",
-   "score": 26.285,
+   "score": 27.957,
    "because": [
     "34113766",
-    "56022194",
-    "59771182",
-    "63266154"
+    "55375596",
+    "243579844",
+    "52331839"
    ]
   },
   {
@@ -11120,12 +11185,12 @@
    "ratingsCount": 1585,
    "description": "Un thriller adictivo que entrelaza los rituales de un asesino en serie con los secretos más oscuros de una élite privilegiada.\r\nSi nadie lo impide, volverá a ocurrir.\r\n\r\nJunio de 1996. Playa de Zurriola, San Sebastián.\r\n\r\nUna escultura de arena oculta el cadáver de una joven estudiante. En la frente, una palabra grabada a fuego: EXLIBRIS. Desde entonces, cada cuatro años, en el mes de junio, el asesino repite su ritual. Secuestra, tortura, viola y asesina a una joven, y le marca la frente con el mismo sello. La prensa los bautiza como los crímenes del librero. Siempre igual. Siempre impune.\r\n\r\nJunio de 2024. Madrid.\r\n\r\nA Renata Blasco, subinspectora de la Policía Nacional, acaban de…",
    "language": "Spanish; Castilian",
-   "score": 17.169,
+   "score": 19.244,
    "because": [
     "34113766",
-    "63266154",
-    "44154465",
-    "52190954"
+    "55375596",
+    "243579844",
+    "222340862"
    ]
   },
   {
@@ -11167,7 +11232,7 @@
     "960",
     "29082330",
     "47532",
-    "17245"
+    "2366001"
    ]
   },
   {
@@ -11199,9 +11264,39 @@
    "score": 15.266,
    "because": [
     "31842429",
-    "59455555",
     "63266154",
-    "59771182"
+    "22430367",
+    "41484859"
+   ]
+  },
+  {
+   "bookId": "222584016",
+   "workId": "229592031",
+   "title": "No mientas",
+   "fullTitle": "No mientas",
+   "authorId": "25473811",
+   "author": "Arturo del Burgo",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1734176274i/222584016.jpg",
+   "genres": [
+    "Thriller",
+    "Suspense",
+    "Fiction",
+    "Crime",
+    "Mystery",
+    "Audiobook"
+   ],
+   "pages": 416,
+   "year": 2024,
+   "avgRating": 4.26,
+   "ratingsCount": 3365,
+   "description": "Él publica sus crímenes minutos antes de cometerlos. Ella no se detendrà hasta encontrarlo.\r\nNo mientas, el caso que convulsionará el país entero. ¿Te atreves a leerlo?\r\n\r\nEl cuerpo de Daniela aparece sin vida en un hotel a las afueras de San Sebastián. Esperaba a su amante en la habitación cuando la sorprendió una muerte brutal y violenta: esposada con los ojos vendados para simular un inocente juego sexual, y apuñalada.\r\nLa inspectora Adriana Collante acude a la escena del crimen para hacerse cargo de la investigación. Pero también lo hace un periodista que ha recibido un correo del asesino con la hora y la fecha del lugar del homicidio. Así se anuncia la muerte de la mujer, la primera…",
+   "language": "Spanish; Castilian",
+   "score": 14.722,
+   "because": [
+    "34113766",
+    "55375596",
+    "243579844",
+    "63266154"
    ]
   },
   {
@@ -11234,38 +11329,8 @@
    "because": [
     "34113766",
     "34505172",
-    "56022194",
-    "181111705"
-   ]
-  },
-  {
-   "bookId": "222584016",
-   "workId": "229592031",
-   "title": "No mientas",
-   "fullTitle": "No mientas",
-   "authorId": "25473811",
-   "author": "Arturo del Burgo",
-   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1734176274i/222584016.jpg",
-   "genres": [
-    "Thriller",
-    "Suspense",
-    "Fiction",
-    "Crime",
-    "Mystery",
-    "Audiobook"
-   ],
-   "pages": 416,
-   "year": 2024,
-   "avgRating": 4.26,
-   "ratingsCount": 3365,
-   "description": "Él publica sus crímenes minutos antes de cometerlos. Ella no se detendrà hasta encontrarlo.\r\nNo mientas, el caso que convulsionará el país entero. ¿Te atreves a leerlo?\r\n\r\nEl cuerpo de Daniela aparece sin vida en un hotel a las afueras de San Sebastián. Esperaba a su amante en la habitación cuando la sorprendió una muerte brutal y violenta: esposada con los ojos vendados para simular un inocente juego sexual, y apuñalada.\r\nLa inspectora Adriana Collante acude a la escena del crimen para hacerse cargo de la investigación. Pero también lo hace un periodista que ha recibido un correo del asesino con la hora y la fecha del lugar del homicidio. Así se anuncia la muerte de la mujer, la primera…",
-   "language": "Spanish; Castilian",
-   "score": 14.044,
-   "because": [
-    "34113766",
-    "59455555",
-    "55375596",
-    "63266154"
+    "52331839",
+    "218548848"
    ]
   },
   {
@@ -11306,8 +11371,8 @@
    "because": [
     "960",
     "47532",
-    "15868",
-    "15872"
+    "2366001",
+    "15868"
    ]
   },
   {
@@ -11339,9 +11404,52 @@
    "score": 9.777,
    "because": [
     "31842429",
-    "59455555",
     "63266154",
-    "59771182"
+    "41484859",
+    "56022281"
+   ]
+  },
+  {
+   "bookId": "221265198",
+   "workId": "228231858",
+   "title": "Asesinato en la casa rosa",
+   "fullTitle": "Asesinato en la casa rosa (Los crímenes de Loeiro, #1)",
+   "authorId": "20473150",
+   "author": "Arantza Portabales",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1730897906i/221265198.jpg",
+   "genres": [
+    "Thriller",
+    "Crime",
+    "Audiobook",
+    "Suspense",
+    "Detective",
+    "Mystery",
+    "Fiction"
+   ],
+   "series": [
+    {
+     "title": "Los crímenes de Loeiro",
+     "url": "https://www.goodreads.com/series/411344-los-cr-menes-de-loeiro",
+     "position": "1"
+    },
+    {
+     "title": "Os crimes de Loeiro",
+     "url": "https://www.goodreads.com/series/441049-os-crimes-de-loeiro",
+     "position": "1"
+    }
+   ],
+   "pages": 413,
+   "year": 2025,
+   "avgRating": 4.02,
+   "ratingsCount": 2839,
+   "description": "El primer caso de la serie «Los Crímenes de Loeiro», por la aclamada autora de Belleza roja, con más de 100 000 lectores.\r\n\r\nMayo de 2024. La inspectora Iria Santaclara ha abandonado el servicio activo para cuidar de Ángel, su marido, convaleciente tras sufrir un ictus, cuando recibe la misteriosa llamada de Ulises Villamor, una de las fortunas más importantes del país y dueño de un imperio vinculado al ámbito sanitario. El empresario le pide que se traslade a su mansión de Loeiro, en la que vive con sus hijos y nietos, para tratar de investigar de manera extraoficial la muerte de su mujer, pues sospecha que esta fue asesinada hace cuatro años por un miembro de su propia familia. La…",
+   "language": "Spanish; Castilian",
+   "score": 9.671,
+   "because": [
+    "34113766",
+    "55375596",
+    "243579844",
+    "63266154"
    ]
   },
   {
@@ -11380,52 +11488,9 @@
    "score": 9.54,
    "because": [
     "29794850",
-    "9469076",
-    "20426394",
-    "39651837"
-   ]
-  },
-  {
-   "bookId": "221265198",
-   "workId": "228231858",
-   "title": "Asesinato en la casa rosa",
-   "fullTitle": "Asesinato en la casa rosa (Los crímenes de Loeiro, #1)",
-   "authorId": "20473150",
-   "author": "Arantza Portabales",
-   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1730897906i/221265198.jpg",
-   "genres": [
-    "Thriller",
-    "Crime",
-    "Audiobook",
-    "Suspense",
-    "Detective",
-    "Mystery",
-    "Fiction"
-   ],
-   "series": [
-    {
-     "title": "Los crímenes de Loeiro",
-     "url": "https://www.goodreads.com/series/411344-los-cr-menes-de-loeiro",
-     "position": "1"
-    },
-    {
-     "title": "Os crimes de Loeiro",
-     "url": "https://www.goodreads.com/series/441049-os-crimes-de-loeiro",
-     "position": "1"
-    }
-   ],
-   "pages": 413,
-   "year": 2025,
-   "avgRating": 4.02,
-   "ratingsCount": 2839,
-   "description": "El primer caso de la serie «Los Crímenes de Loeiro», por la aclamada autora de Belleza roja, con más de 100 000 lectores.\r\n\r\nMayo de 2024. La inspectora Iria Santaclara ha abandonado el servicio activo para cuidar de Ángel, su marido, convaleciente tras sufrir un ictus, cuando recibe la misteriosa llamada de Ulises Villamor, una de las fortunas más importantes del país y dueño de un imperio vinculado al ámbito sanitario. El empresario le pide que se traslade a su mansión de Loeiro, en la que vive con sus hijos y nietos, para tratar de investigar de manera extraoficial la muerte de su mujer, pues sospecha que esta fue asesinada hace cuatro años por un miembro de su propia familia. La…",
-   "language": "Spanish; Castilian",
-   "score": 9.179,
-   "because": [
-    "34113766",
-    "59455555",
-    "55375596",
-    "56022194"
+    "49392",
+    "44284989",
+    "41743264"
    ]
   },
   {
@@ -11453,10 +11518,10 @@
    "language": "Spanish; Castilian",
    "score": 8.933,
    "because": [
-    "56022194",
-    "63266154",
-    "52190954",
-    "25499384"
+    "55375596",
+    "52331839",
+    "222340862",
+    "61277726"
    ]
   },
   {
@@ -11502,7 +11567,7 @@
    "because": [
     "960",
     "29082330",
-    "7160913",
+    "4222",
     "17337509"
    ]
   },
@@ -11537,8 +11602,8 @@
    "because": [
     "960",
     "29082330",
-    "15868",
-    "17245"
+    "485894",
+    "15868"
    ]
   },
   {
@@ -11569,10 +11634,10 @@
    "language": "Spanish; Castilian",
    "score": 7.408,
    "because": [
-    "34113766",
     "31842429",
-    "73770",
-    "218548848"
+    "34113766",
+    "218548848",
+    "60467659"
    ]
   },
   {
@@ -11613,8 +11678,8 @@
    "because": [
     "960",
     "47532",
-    "15868",
-    "17337509"
+    "17337509",
+    "2366001"
    ]
   },
   {
@@ -11645,10 +11710,10 @@
    "language": "Spanish; Castilian",
    "score": 7.075,
    "because": [
-    "22430367",
-    "20426394",
-    "39651837",
-    "50273222"
+    "44284989",
+    "41743264",
+    "54334693",
+    "20426394"
    ]
   },
   {
@@ -11693,9 +11758,34 @@
    "score": 6.997,
    "because": [
     "47532",
+    "2366001",
     "15868",
-    "15872",
-    "15876"
+    "101558"
+   ]
+  },
+  {
+   "bookId": "250265696",
+   "workId": "286693750",
+   "title": "El sótano",
+   "fullTitle": "El sótano",
+   "authorId": "5348611",
+   "author": "Roberto Leal",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1774527054i/250265696.jpg",
+   "genres": [
+    "Thriller"
+   ],
+   "pages": 344,
+   "year": 2026,
+   "avgRating": 3.66,
+   "ratingsCount": 1315,
+   "description": "Ten cuidado, te están mirando.\r\nTras convertirse en sospechoso de la desaparición de su pareja, Samuel ve cómo su vida se desmorona ante sus ojos: su reputación, su trabajo y sus planes de futuro desaparecen. Años después, unas misteriosas cartas le dejan entrever una vida que creía inalcanzable. Entonces aparece ella.\r\nMia. Guapa, elegante y casada. Y lo que empieza como interés se convierte en una obsesión. Desde la oscuridad de un sótano olvidado, sabe cómo acercarse a ella y aunque sus métodos no sean los más convencionales, nada podrá detenerle.\r\nPero observar la vida de los demás tiene un precio que no ha calculado...",
+   "language": "Spanish; Castilian",
+   "score": 6.632,
+   "because": [
+    "243579844",
+    "63266154",
+    "38966507",
+    "56022281"
    ]
   },
   {
@@ -11726,10 +11816,10 @@
    "language": "Spanish; Castilian",
    "score": 6.472,
    "because": [
-    "29794850",
     "34505172",
-    "181111705",
-    "22430367"
+    "29794850",
+    "59708201",
+    "60867895"
    ]
   },
   {
@@ -11775,8 +11865,8 @@
    "because": [
     "960",
     "47532",
-    "15868",
-    "101558"
+    "6691227",
+    "15868"
    ]
   },
   {
@@ -11808,10 +11898,10 @@
    "originalTitle": "The Martian",
    "score": 5.889,
    "because": [
+    "16278318",
+    "6691227",
     "26082916",
-    "7160913",
-    "9969571",
-    "16278318"
+    "7160913"
    ]
   },
   {
@@ -11835,9 +11925,34 @@
    "score": 5.831,
    "because": [
     "34113766",
-    "56022194",
-    "59771182",
+    "38966507",
+    "218548848",
     "222340862"
+   ]
+  },
+  {
+   "bookId": "247006515",
+   "workId": "277792059",
+   "title": "El secreto de Victor Black",
+   "fullTitle": "El secreto de Victor Black",
+   "authorId": "32533791",
+   "author": "Alexandre Escrivà",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1770292993i/247006515.jpg",
+   "genres": [
+    "Thriller"
+   ],
+   "pages": 360,
+   "year": 2026,
+   "avgRating": 3.99,
+   "ratingsCount": 937,
+   "description": "«El nuevo talento de la novela negra en España, dispuesto a ir por los caminos más oscuros.» Miquel Hernandis, El Español\r\n\r\nPor el autor de El último caso de William Parker: «oscura y sorprendente» (Javier Castillo)\r\n\r\nAl alba del 9 de enero de 2017, Jacob Fisher, un asesor financiero de San Francisco, encuentra en la cocina el cadáver de su esposa Natalie cosido a puñaladas y con varias mantis religiosas encima. El asesinato coincide con la desaparición de Sharon, la hija adolescente del matrimonio. Al tomar el mando de la investigación, el inspector William Parker se da cuenta de que el modus operandi del homicida es el mismo que el de Victor Black, un asesino en serie que cumple su…",
+   "language": "Spanish; Castilian",
+   "score": 5.809,
+   "because": [
+    "243579844",
+    "63266154",
+    "38966507",
+    "56022281"
    ]
   },
   {
@@ -11862,9 +11977,9 @@
    "score": 5.511,
    "because": [
     "34113766",
-    "59455555",
     "63266154",
-    "22430367"
+    "38966507",
+    "56022281"
    ]
   },
   {
@@ -11897,34 +12012,9 @@
    "score": 5.477,
    "because": [
     "17212231",
-    "26082916",
-    "9969571",
-    "16278318"
-   ]
-  },
-  {
-   "bookId": "250265696",
-   "workId": "286693750",
-   "title": "El sótano",
-   "fullTitle": "El sótano",
-   "authorId": "5348611",
-   "author": "Roberto Leal",
-   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1774527054i/250265696.jpg",
-   "genres": [
-    "Thriller"
-   ],
-   "pages": 344,
-   "year": 2026,
-   "avgRating": 3.66,
-   "ratingsCount": 1315,
-   "description": "Ten cuidado, te están mirando.\r\nTras convertirse en sospechoso de la desaparición de su pareja, Samuel ve cómo su vida se desmorona ante sus ojos: su reputación, su trabajo y sus planes de futuro desaparecen. Años después, unas misteriosas cartas le dejan entrever una vida que creía inalcanzable. Entonces aparece ella.\r\nMia. Guapa, elegante y casada. Y lo que empieza como interés se convierte en una obsesión. Desde la oscuridad de un sótano olvidado, sabe cómo acercarse a ella y aunque sus métodos no sean los más convencionales, nada podrá detenerle.\r\nPero observar la vida de los demás tiene un precio que no ha calculado...",
-   "language": "Spanish; Castilian",
-   "score": 5.35,
-   "because": [
-    "59455555",
-    "63266154",
-    "22430367",
-    "244171005"
+    "16278318",
+    "6691227",
+    "26082916"
    ]
   },
   {
@@ -11969,8 +12059,8 @@
    "score": 5.258,
    "because": [
     "47532",
+    "2366001",
     "15868",
-    "15872",
     "101558"
    ]
   },
@@ -12039,9 +12129,9 @@
    "language": "Spanish; Castilian",
    "score": 5.189,
    "because": [
-    "59455555",
     "63266154",
     "41484859",
+    "56022281",
     "44154465"
    ]
   },
@@ -12061,9 +12151,9 @@
    "language": "Spanish; Castilian",
    "score": 4.748,
    "because": [
-    "215599847",
-    "215599764",
     "215599706",
+    "215599793",
+    "215599764",
     "215599743"
    ]
   },
@@ -12103,10 +12193,10 @@
    "originalTitle": "La Vérité sur l'Affaire Harry Quebert",
    "score": 4.598,
    "because": [
-    "9469076",
-    "39651837",
+    "49392",
     "44284989",
-    "41743264"
+    "41743264",
+    "9469076"
    ]
   },
   {
@@ -12173,8 +12263,8 @@
    "score": 4.561,
    "because": [
     "960",
-    "52619546",
-    "17337509"
+    "17337509",
+    "52619546"
    ]
   },
   {
@@ -12213,9 +12303,9 @@
    "originalTitle": "Fantastic Beasts and Where to Find Them",
    "score": 4.521,
    "because": [
-    "15872",
-    "15876",
+    "2366001",
     "101558",
+    "15872",
     "357545"
    ]
   },
@@ -12256,9 +12346,9 @@
    "score": 4.499,
    "because": [
     "960",
-    "47532",
+    "6691227",
     "15868",
-    "6691227"
+    "47532"
    ]
   },
   {
@@ -12280,9 +12370,9 @@
    "language": "Spanish; Castilian",
    "score": 4.499,
    "because": [
-    "215599847",
-    "215599764",
     "215599706",
+    "215599793",
+    "215599764",
     "215599743"
    ]
   },
@@ -12302,9 +12392,9 @@
    "language": "Spanish; Castilian",
    "score": 4.477,
    "because": [
-    "215599847",
-    "215599764",
     "215599706",
+    "215599793",
+    "215599764",
     "215599743"
    ]
   },
@@ -12354,10 +12444,10 @@
    "originalTitle": "Ender’s Game",
    "score": 4.45,
    "because": [
-    "26082916",
-    "9969571",
     "16278318",
-    "6691227"
+    "6691227",
+    "9969571",
+    "26082916"
    ]
   },
   {
@@ -12393,35 +12483,36 @@
    "language": "Spanish; Castilian",
    "score": 4.423,
    "because": [
-    "215599847",
-    "215599764",
     "215599706",
+    "215599793",
+    "215599764",
     "215599743"
    ]
   },
   {
-   "bookId": "247006515",
-   "workId": "277792059",
-   "title": "El secreto de Victor Black",
-   "fullTitle": "El secreto de Victor Black",
-   "authorId": "32533791",
-   "author": "Alexandre Escrivà",
-   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1770292993i/247006515.jpg",
+   "bookId": "249055828",
+   "workId": "283584863",
+   "title": "Antes de que todo cambie",
+   "fullTitle": "Antes de que todo cambie",
+   "authorId": "1641503",
+   "author": "Manel Loureiro",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1772136308i/249055828.jpg",
    "genres": [
-    "Thriller"
+    "Thriller",
+    "Audiobook"
    ],
-   "pages": 360,
+   "pages": 448,
    "year": 2026,
-   "avgRating": 3.99,
-   "ratingsCount": 937,
-   "description": "«El nuevo talento de la novela negra en España, dispuesto a ir por los caminos más oscuros.» Miquel Hernandis, El Español\r\n\r\nPor el autor de El último caso de William Parker: «oscura y sorprendente» (Javier Castillo)\r\n\r\nAl alba del 9 de enero de 2017, Jacob Fisher, un asesor financiero de San Francisco, encuentra en la cocina el cadáver de su esposa Natalie cosido a puñaladas y con varias mantis religiosas encima. El asesinato coincide con la desaparición de Sharon, la hija adolescente del matrimonio. Al tomar el mando de la investigación, el inspector William Parker se da cuenta de que el modus operandi del homicida es el mismo que el de Victor Black, un asesino en serie que cumple su…",
+   "avgRating": 3.84,
+   "ratingsCount": 738,
+   "description": "Dos vidas rotas. Un secreto que lo cambia todo. En un mundo de mentiras, la verdad puede ser mortal.\n\nLa vida de Samuel Hoyos quedó marcada para siempre por una tragedia familiar que lo arrastró a una espiral de autodestrucción. Cuando se encuentra al límite, un personaje tan poderoso como enigmático le hace una propuesta  asesinar en un golpe magistral a todos los mandatarios de la Unión Europea reunidos en la isla de A Toxa.\n\nSin nada que perder y guiado por el rencor, Sam acepta un plan suicida que roza lo imposible. Tras sus pasos avanza la inspectora Julia Duarte, ajena a que su investigación no solo la acercará al terrorista, sino también a los fantasmas que ha intentado enterrar. En…",
    "language": "Spanish; Castilian",
-   "score": 4.276,
+   "score": 4.309,
    "because": [
-    "59455555",
-    "63266154",
-    "244171005",
-    "222340862"
+    "243579844",
+    "38966507",
+    "222340862",
+    "46030949"
    ]
   },
   {
@@ -12460,10 +12551,40 @@
    "originalTitle": "Dungeon Crawler Carl",
    "score": 4.148,
    "because": [
-    "26082916",
-    "9969571",
     "16278318",
-    "6691227"
+    "6691227",
+    "9969571",
+    "26082916"
+   ]
+  },
+  {
+   "bookId": "251292927",
+   "workId": "290104654",
+   "title": "La cámara de las maravillas",
+   "fullTitle": "La cámara de las maravillas",
+   "authorId": "14143566",
+   "author": "María Oruña",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1776769453i/251292927.jpg",
+   "genres": [
+    "Thriller",
+    "Spanish Literature",
+    "Contemporary",
+    "Suspense",
+    "Audiobook",
+    "Adult"
+   ],
+   "pages": 400,
+   "year": 2026,
+   "avgRating": 3.44,
+   "ratingsCount": 1016,
+   "description": "El crimen perfecto también puede ser una obra de arte.\n\nEl nuevo misterio de la reina del thriller.\n\nEn el majestuoso Palacio Dorado, situado en el centro de Madrid, lo más selecto del mundo del arte se ha reunido para la inauguración de Pentimento, un museo que muestra reproducciones de obras de arte icónicas en el contexto donde se exhibieron por primera vez. Amanda Mendoza, la anfitriona, observa con desconfianza a uno de los  el enigmático Dimas Chevalier, el ladrón de guante blanco más famoso de Europa, que, tras unos años en la cárcel, asegura que se ha reformado por completo. Mientras, una figura oscura salta ágilmente por el tejado del palacio para entrar en la Cámara de las…",
+   "language": "Spanish; Castilian",
+   "score": 4.089,
+   "because": [
+    "55375596",
+    "243579844",
+    "63266154",
+    "38966507"
    ]
   },
   {
@@ -12495,8 +12616,8 @@
    "score": 4.006,
    "because": [
     "31842429",
-    "56022281",
-    "49392"
+    "49392",
+    "56022281"
    ]
   },
   {
@@ -12529,9 +12650,9 @@
    "score": 3.976,
    "because": [
     "17212231",
+    "16278318",
     "26082916",
-    "7160913",
-    "9969571"
+    "7160913"
    ]
   },
   {
@@ -12569,10 +12690,10 @@
    "language": "Spanish; Castilian",
    "score": 3.779,
    "because": [
-    "29794850",
     "34505172",
+    "29794850",
     "18642372",
-    "40786226"
+    "59708201"
    ]
   },
   {
@@ -12603,9 +12724,9 @@
    "language": "Spanish; Castilian",
    "score": 3.757,
    "because": [
-    "34113766",
     "31842429",
-    "59771182",
+    "34113766",
+    "60467659",
     "73770"
    ]
   },
@@ -12625,9 +12746,9 @@
    "language": "Spanish; Castilian",
    "score": 3.744,
    "because": [
-    "215599847",
-    "215599764",
     "215599706",
+    "215599793",
+    "215599764",
     "215599743"
    ]
   },
@@ -12660,8 +12781,8 @@
    "score": 3.708,
    "because": [
     "31842429",
-    "49392",
-    "1673987"
+    "1673987",
+    "49392"
    ]
   },
   {
@@ -12694,9 +12815,9 @@
    "score": 3.666,
    "because": [
     "15868",
-    "17245",
+    "6691227",
     "485894",
-    "6691227"
+    "17245"
    ]
   },
   {
@@ -12730,8 +12851,8 @@
    "because": [
     "17212231",
     "53132205",
-    "7160913",
-    "40625078"
+    "40625078",
+    "7160913"
    ]
   },
   {
@@ -12753,9 +12874,9 @@
    "language": "Spanish; Castilian",
    "score": 3.607,
    "because": [
-    "215599847",
-    "215599764",
     "215599706",
+    "215599793",
+    "215599764",
     "215599743"
    ]
   },
@@ -12827,10 +12948,10 @@
    "language": "Spanish; Castilian",
    "score": 3.38,
    "because": [
-    "20426394",
-    "39651837",
     "44284989",
-    "41743264"
+    "41743264",
+    "54334693",
+    "20426394"
    ]
   },
   {
@@ -12863,8 +12984,8 @@
    "score": 3.24,
    "because": [
     "960",
-    "47532",
-    "15868"
+    "15868",
+    "47532"
    ]
   },
   {
@@ -12896,10 +13017,10 @@
    "originalTitle": "The Client",
    "score": 3.227,
    "because": [
+    "5358",
     "6026313",
-    "7160913",
     "4222",
-    "5358"
+    "7160913"
    ]
   },
   {
@@ -12995,9 +13116,9 @@
    "language": "Spanish; Castilian",
    "score": 3.144,
    "because": [
+    "54334693",
     "20426394",
-    "39651837",
-    "50273222",
+    "46202074",
     "27420709"
    ]
   },
@@ -13038,9 +13159,9 @@
    "score": 3.14,
    "because": [
     "17212231",
+    "5358",
     "6026313",
-    "4222",
-    "5358"
+    "4222"
    ]
   },
   {
@@ -13071,10 +13192,10 @@
    "language": "Spanish; Castilian",
    "score": 3.134,
    "because": [
-    "20426394",
-    "59708201",
     "41743264",
-    "61231967"
+    "59708201",
+    "54334693",
+    "20426394"
    ]
   },
   {
@@ -13147,64 +13268,8 @@
    "score": 3.068,
    "because": [
     "31842429",
-    "60467659",
-    "73770"
-   ]
-  },
-  {
-   "bookId": "249055828",
-   "workId": "283584863",
-   "title": "Antes de que todo cambie",
-   "fullTitle": "Antes de que todo cambie",
-   "authorId": "1641503",
-   "author": "Manel Loureiro",
-   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1772136308i/249055828.jpg",
-   "genres": [
-    "Thriller",
-    "Audiobook"
-   ],
-   "pages": 448,
-   "year": 2026,
-   "avgRating": 3.84,
-   "ratingsCount": 738,
-   "description": "Dos vidas rotas. Un secreto que lo cambia todo. En un mundo de mentiras, la verdad puede ser mortal.\n\nLa vida de Samuel Hoyos quedó marcada para siempre por una tragedia familiar que lo arrastró a una espiral de autodestrucción. Cuando se encuentra al límite, un personaje tan poderoso como enigmático le hace una propuesta  asesinar en un golpe magistral a todos los mandatarios de la Unión Europea reunidos en la isla de A Toxa.\n\nSin nada que perder y guiado por el rencor, Sam acepta un plan suicida que roza lo imposible. Tras sus pasos avanza la inspectora Julia Duarte, ajena a que su investigación no solo la acercará al terrorista, sino también a los fantasmas que ha intentado enterrar. En…",
-   "language": "Spanish; Castilian",
-   "score": 3.054,
-   "because": [
-    "244171005",
-    "222340862",
-    "46030949",
-    "38966507"
-   ]
-  },
-  {
-   "bookId": "251292927",
-   "workId": "290104654",
-   "title": "La cámara de las maravillas",
-   "fullTitle": "La cámara de las maravillas",
-   "authorId": "14143566",
-   "author": "María Oruña",
-   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1776769453i/251292927.jpg",
-   "genres": [
-    "Thriller",
-    "Spanish Literature",
-    "Contemporary",
-    "Suspense",
-    "Audiobook",
-    "Adult"
-   ],
-   "pages": 400,
-   "year": 2026,
-   "avgRating": 3.44,
-   "ratingsCount": 1016,
-   "description": "El crimen perfecto también puede ser una obra de arte.\n\nEl nuevo misterio de la reina del thriller.\n\nEn el majestuoso Palacio Dorado, situado en el centro de Madrid, lo más selecto del mundo del arte se ha reunido para la inauguración de Pentimento, un museo que muestra reproducciones de obras de arte icónicas en el contexto donde se exhibieron por primera vez. Amanda Mendoza, la anfitriona, observa con desconfianza a uno de los  el enigmático Dimas Chevalier, el ladrón de guante blanco más famoso de Europa, que, tras unos años en la cárcel, asegura que se ha reformado por completo. Mientras, una figura oscura salta ágilmente por el tejado del palacio para entrar en la Cámara de las…",
-   "language": "Spanish; Castilian",
-   "score": 3.051,
-   "because": [
-    "55375596",
-    "63266154",
-    "244171005",
-    "222340862"
+    "73770",
+    "60467659"
    ]
   },
   {
@@ -13223,9 +13288,9 @@
    "language": "Spanish; Castilian",
    "score": 3.002,
    "because": [
-    "215599847",
-    "215599764",
     "215599706",
+    "215599793",
+    "215599764",
     "215599743"
    ]
   },
@@ -13245,9 +13310,9 @@
    "language": "Spanish; Castilian",
    "score": 2.977,
    "because": [
-    "215599847",
-    "215599764",
     "215599706",
+    "215599793",
+    "215599764",
     "215599743"
    ]
   },
@@ -13287,10 +13352,10 @@
    "originalTitle": "The Last Cato",
    "score": 2.937,
    "because": [
-    "11033",
-    "69852",
     "73770",
-    "1673987"
+    "11033",
+    "1673987",
+    "69852"
    ]
   },
   {
@@ -13329,10 +13394,10 @@
    "originalTitle": "The Things You Find in Rockpools",
    "score": 2.929,
    "because": [
-    "215599847",
     "215599764",
+    "215599793",
     "215599743",
-    "215599793"
+    "215599847"
    ]
   },
   {
@@ -13377,8 +13442,8 @@
    "score": 2.921,
    "because": [
     "17212231",
-    "53132205",
-    "7160913"
+    "7160913",
+    "53132205"
    ]
   },
   {
@@ -13409,7 +13474,7 @@
    "language": "Spanish; Castilian",
    "score": 2.901,
    "because": [
-    "59771182",
+    "49392",
     "41484859",
     "44154465",
     "8494151"
@@ -13451,10 +13516,41 @@
    "originalTitle": "Eragon",
    "score": 2.853,
    "because": [
-    "2366001",
     "101558",
+    "2366001",
     "15868",
     "47532"
+   ]
+  },
+  {
+   "bookId": "245780860",
+   "workId": "275074882",
+   "title": "Maite",
+   "fullTitle": "Maite",
+   "authorId": "68308",
+   "author": "Fernando Aramburu",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1766707440i/245780860.jpg",
+   "genres": [
+    "Fiction",
+    "Audiobook",
+    "Drama",
+    "Spain",
+    "Spanish Literature",
+    "Historical Fiction",
+    "Social"
+   ],
+   "pages": 344,
+   "year": 2026,
+   "avgRating": 3.27,
+   "ratingsCount": 3151,
+   "description": "San Sebastián, julio de 1997. Mientras su marido está de viaje por trabajo, Maite recibe a su hermana Elene, que, tras pasar largos años en Estados Unidos, vuelve a su ciudad porque la madre de ambas ha sufrido un ictus. En los días que pasarán juntas, las hermanas y la madre conviven y conversan pero rehúyen decirse toda la verdad. También evitan mirar de frente la tensión social que las rodea: ETA ha secuestrado a un concejal de Ermua, Miguel Ángel Blanco, y amenaza con ejecutarlo si no se cumplen sus demandas. Los hechos históricos corren en paralelo a la intimidad de Maite, una mujer sensible, compasiva, atenta, pero atrapada en convenciones que le impiden abrir los ojos y afrontar la…",
+   "language": "Spanish; Castilian",
+   "score": 2.827,
+   "because": [
+    "55375596",
+    "243579844",
+    "22430367",
+    "38966507"
    ]
   },
   {
@@ -13516,10 +13612,10 @@
    "language": "Spanish; Castilian",
    "score": 2.775,
    "because": [
-    "215599847",
     "215599764",
+    "215599793",
     "215599706",
-    "215599793"
+    "215599847"
    ]
   },
   {
@@ -13558,9 +13654,9 @@
    "originalTitle": "A Time to Kill",
    "score": 2.749,
    "because": [
+    "5358",
     "6026313",
-    "4222",
-    "5358"
+    "4222"
    ]
   },
   {
@@ -13586,8 +13682,8 @@
    "score": 2.659,
    "because": [
     "34113766",
-    "153894584",
-    "55375596"
+    "55375596",
+    "153894584"
    ]
   },
   {
@@ -13619,9 +13715,35 @@
    "originalTitle": "Pride and Prejudice",
    "score": 2.65,
    "because": [
-    "47532",
+    "17245",
     "15868",
-    "17245"
+    "47532"
+   ]
+  },
+  {
+   "bookId": "242017052",
+   "workId": "261744354",
+   "title": "La canguro",
+   "fullTitle": "La canguro",
+   "authorId": "669344",
+   "author": "Pablo Rivero",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1764252357i/242017052.jpg",
+   "genres": [
+    "Thriller",
+    "Suspense"
+   ],
+   "pages": 384,
+   "year": 2026,
+   "avgRating": 3.73,
+   "ratingsCount": 2103,
+   "description": "Lo cotidiano se vuelve pesadilla\n\n¿Pondrías la mano en el fuego por ella?\n\nPablo Rivero regresa con su nueva novela, un domestic noir lleno de adrenalina.\n\nLa convivencia puede matar.\n\nLOS TRAPOS SUCIOS SE LAVAN EN CASA.\n\nVivo encerrada con mis hijos desde que nació mi pequeña.\n\nSolo salgo en contadas ocasiones.\n\nSiempre por el garaje.\n\nProtegerlos es mi prioridad, pero necesito ayuda.\n\nNo va a ser fácil.\n\nHe de encontrar a la persona adecuada.\n\nUna canguro que entienda la importancia de mis normas.\n\nQue no haga preguntas.\n\nQue no cometa errores.\n\nNadie, ni siquiera mi marido, puede descubrir la verdad.\n\nDe lo contrario, me veré obligada a actuar.\n\nPlease  This audiobook is in Spanish.",
+   "language": "Spanish; Castilian",
+   "score": 2.604,
+   "because": [
+    "243579844",
+    "38966507",
+    "222340862",
+    "244171005"
    ]
   },
   {
@@ -13640,10 +13762,10 @@
    "language": "Spanish; Castilian",
    "score": 2.582,
    "because": [
-    "215599847",
     "215599764",
+    "215599793",
     "215599706",
-    "215599793"
+    "215599847"
    ]
   },
   {
@@ -13705,9 +13827,9 @@
    "score": 2.542,
    "because": [
     "59455555",
+    "222340862",
     "56022281",
-    "63266154",
-    "222340862"
+    "63266154"
    ]
   },
   {
@@ -13740,8 +13862,8 @@
    "score": 2.511,
    "because": [
     "17212231",
-    "53132205",
-    "7160913"
+    "7160913",
+    "53132205"
    ]
   },
   {
@@ -13773,8 +13895,8 @@
    "score": 2.511,
    "because": [
     "44154465",
-    "52136668",
-    "41484859"
+    "41484859",
+    "52136668"
    ]
   },
   {
@@ -13806,9 +13928,9 @@
    "originalTitle": "The Pelican Brief",
    "score": 2.509,
    "because": [
-    "7160913",
+    "5358",
     "4222",
-    "5358"
+    "7160913"
    ]
   },
   {
@@ -13840,9 +13962,9 @@
    "originalTitle": "The Fault in Our Stars",
    "score": 2.474,
    "because": [
-    "47532",
+    "17337509",
     "15868",
-    "17337509"
+    "47532"
    ]
   },
   {
@@ -13862,8 +13984,8 @@
    "score": 2.455,
    "because": [
     "17212231",
-    "6026313",
     "7160913",
+    "6026313",
     "4222"
    ]
   },
@@ -13893,41 +14015,35 @@
    "language": "Spanish; Castilian",
    "score": 2.447,
    "because": [
-    "215599847",
-    "215599764",
     "215599706",
+    "215599793",
+    "215599764",
     "215599743"
    ]
   },
   {
-   "bookId": "245780860",
-   "workId": "275074882",
-   "title": "Maite",
-   "fullTitle": "Maite",
-   "authorId": "68308",
-   "author": "Fernando Aramburu",
-   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1766707440i/245780860.jpg",
+   "bookId": "250223562",
+   "workId": "286466589",
+   "title": "La enfermera",
+   "fullTitle": "La enfermera",
+   "authorId": "71355378",
+   "author": "Martín Torres",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1774440190i/250223562.jpg",
    "genres": [
-    "Fiction",
-    "Audiobook",
-    "Drama",
-    "Spain",
-    "Spanish Literature",
-    "Historical Fiction",
-    "Social"
+    "Thriller"
    ],
-   "pages": 344,
+   "pages": 512,
    "year": 2026,
-   "avgRating": 3.27,
-   "ratingsCount": 3151,
-   "description": "San Sebastián, julio de 1997. Mientras su marido está de viaje por trabajo, Maite recibe a su hermana Elene, que, tras pasar largos años en Estados Unidos, vuelve a su ciudad porque la madre de ambas ha sufrido un ictus. En los días que pasarán juntas, las hermanas y la madre conviven y conversan pero rehúyen decirse toda la verdad. También evitan mirar de frente la tensión social que las rodea: ETA ha secuestrado a un concejal de Ermua, Miguel Ángel Blanco, y amenaza con ejecutarlo si no se cumplen sus demandas. Los hechos históricos corren en paralelo a la intimidad de Maite, una mujer sensible, compasiva, atenta, pero atrapada en convenciones que le impiden abrir los ojos y afrontar la…",
+   "avgRating": 3.4,
+   "ratingsCount": 731,
+   "description": "HAY SECRETOS QUE SALVAN VIDAS… ESTE PODRÍA DESTRUIRLAS. EL THRILLER QUE TE HELARÁ LA SANGRE.\n\nEl Hospital Universitario Donostia se ha convertido en el epicentro de una serie de muertes imposibles. La sala de Urgencias es un caos: hay víctimas fatales de un accidente de tráfico, un cadáver mutilado y una paciente que le grita al diablo.\n\nLa enfermera Sophie Boussignac se descubre a sí misma en medio de un ataque de pánico y con la cara ensangrentada. No sabe qué ha ocurrido. Víctor Viso, un médico militar retirado que acaba de incorporarse al servicio, la ayudará a desentrañar el misterio. Ambos, rotos por sus pasados, comprenderán que algunas heridas nunca cicatrizan.\n\nCon un ritmo…",
    "language": "Spanish; Castilian",
-   "score": 2.42,
+   "score": 2.418,
    "because": [
     "55375596",
-    "59771182",
-    "22430367",
-    "244171005"
+    "243579844",
+    "38966507",
+    "46030949"
    ]
   },
   {
@@ -13988,10 +14104,10 @@
    "language": "Spanish; Castilian",
    "score": 2.387,
    "because": [
+    "52331839",
+    "218548848",
     "56022194",
-    "22430367",
-    "73770",
-    "52331839"
+    "73770"
    ]
   },
   {
@@ -14031,8 +14147,8 @@
    "because": [
     "18642372",
     "11033",
-    "60467659",
-    "7194"
+    "7194",
+    "60467659"
    ]
   },
   {
@@ -14051,9 +14167,9 @@
    "language": "Spanish; Castilian",
    "score": 2.27,
    "because": [
-    "215599847",
     "215599706",
-    "215599793"
+    "215599793",
+    "215599847"
    ]
   },
   {
@@ -14102,6 +14218,32 @@
    ]
   },
   {
+   "bookId": "244465564",
+   "workId": "269707227",
+   "title": "El asesino de invierno",
+   "fullTitle": "El asesino de invierno",
+   "authorId": "19883957",
+   "author": "Greta Alonso",
+   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1764169438i/244465564.jpg",
+   "genres": [
+    "Thriller",
+    "Detective"
+   ],
+   "pages": 496,
+   "year": 2026,
+   "avgRating": 4.14,
+   "ratingsCount": 535,
+   "description": "Un lugar marcado por la muerte. Un inspector que no quiere volver...\r\n\r\n2024. La aparición de un cadáver envuelto en un macabro sudario marca el inicio de unos crímenes que aterrarán a la ciudad. La única pista es un nombre de mujer: Palmira.\r\n\r\nEl joven inspector Martín Benot regresa a casa después de un largo destierro y toma las riendas de una investigación que va a revolver sus demonios familiares.\r\n\r\nCuando la brillante doctora Cecilia Flores ―por quien Martín siente una rara fascinación y cuyo rostro cree recordar― expone las causas asombrosas de las muertes, el pánico se apodera de este emblemático rincón del norte.\r\n\r\nUn inspector pertinaz e idealista, una forense obsesiva y…",
+   "language": "Spanish; Castilian",
+   "score": 2.191,
+   "because": [
+    "243579844",
+    "38966507",
+    "46030949",
+    "244171005"
+   ]
+  },
+  {
    "bookId": "48326",
    "workId": "1858012",
    "title": "El retrato de Dorian Gray",
@@ -14130,8 +14272,8 @@
    "originalTitle": "The Picture of Dorian Gray",
    "score": 2.152,
    "because": [
-    "17245",
-    "485894"
+    "485894",
+    "17245"
    ]
   },
   {
@@ -14163,8 +14305,8 @@
    "originalTitle": "The Name of the Rose",
    "score": 2.151,
    "because": [
-    "7194",
     "69852",
+    "7194",
     "5043"
    ]
   },
@@ -14197,32 +14339,6 @@
    "score": 2.103,
    "because": [
     "31842429"
-   ]
-  },
-  {
-   "bookId": "242017052",
-   "workId": "261744354",
-   "title": "La canguro",
-   "fullTitle": "La canguro",
-   "authorId": "669344",
-   "author": "Pablo Rivero",
-   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1764252357i/242017052.jpg",
-   "genres": [
-    "Thriller",
-    "Suspense"
-   ],
-   "pages": 384,
-   "year": 2026,
-   "avgRating": 3.73,
-   "ratingsCount": 2103,
-   "description": "Lo cotidiano se vuelve pesadilla\n\n¿Pondrías la mano en el fuego por ella?\n\nPablo Rivero regresa con su nueva novela, un domestic noir lleno de adrenalina.\n\nLa convivencia puede matar.\n\nLOS TRAPOS SUCIOS SE LAVAN EN CASA.\n\nVivo encerrada con mis hijos desde que nació mi pequeña.\n\nSolo salgo en contadas ocasiones.\n\nSiempre por el garaje.\n\nProtegerlos es mi prioridad, pero necesito ayuda.\n\nNo va a ser fácil.\n\nHe de encontrar a la persona adecuada.\n\nUna canguro que entienda la importancia de mis normas.\n\nQue no haga preguntas.\n\nQue no cometa errores.\n\nNadie, ni siquiera mi marido, puede descubrir la verdad.\n\nDe lo contrario, me veré obligada a actuar.\n\nPlease  This audiobook is in Spanish.",
-   "language": "Spanish; Castilian",
-   "score": 2.036,
-   "because": [
-    "244171005",
-    "59455555",
-    "38966507",
-    "222340862"
    ]
   },
   {
@@ -14288,8 +14404,8 @@
    "score": 2.017,
    "because": [
     "15868",
-    "17245",
-    "485894"
+    "485894",
+    "17245"
    ]
   },
   {
@@ -14321,8 +14437,8 @@
    "originalTitle": "Frankenstein",
    "score": 2.012,
    "because": [
-    "17245",
-    "485894"
+    "485894",
+    "17245"
    ]
   },
   {
@@ -14354,8 +14470,8 @@
    "originalTitle": "Crime and Punishment",
    "score": 2.0,
    "because": [
-    "17245",
-    "485894"
+    "485894",
+    "17245"
    ]
   },
   {
@@ -14435,8 +14551,8 @@
    "originalTitle": "The Shadow of the Wind",
    "score": 1.978,
    "because": [
-    "5043",
-    "49392"
+    "49392",
+    "5043"
    ]
   },
   {
@@ -14524,9 +14640,9 @@
    "language": "Spanish; Castilian",
    "score": 1.926,
    "because": [
-    "215599847",
     "215599706",
-    "215599793"
+    "215599793",
+    "215599847"
    ]
   },
   {
@@ -14596,8 +14712,8 @@
    "originalTitle": "Red Rising",
    "score": 1.883,
    "because": [
-    "26082916",
-    "9969571"
+    "9969571",
+    "26082916"
    ]
   },
   {
@@ -14745,8 +14861,8 @@
    "score": 1.835,
    "because": [
     "44154465",
-    "52136668",
-    "41484859"
+    "41484859",
+    "52136668"
    ]
   },
   {
@@ -14778,8 +14894,8 @@
    "originalTitle": "Dear Debbie",
    "score": 1.802,
    "because": [
-    "52136668",
-    "52619546"
+    "52619546",
+    "52136668"
    ]
   },
   {
@@ -14810,8 +14926,8 @@
    "language": "English",
    "score": 1.8,
    "because": [
-    "52136668",
-    "52619546"
+    "52619546",
+    "52136668"
    ]
   },
   {
@@ -14908,8 +15024,8 @@
    "originalTitle": "The Help",
    "score": 1.742,
    "because": [
-    "5043",
-    "17337509"
+    "17337509",
+    "5043"
    ]
   },
   {
@@ -14941,8 +15057,8 @@
    "originalTitle": "Where the Crawdads Sing",
    "score": 1.736,
    "because": [
-    "52619546",
-    "17337509"
+    "17337509",
+    "52619546"
    ]
   },
   {
@@ -15030,9 +15146,9 @@
    "language": "Spanish; Castilian",
    "score": 1.694,
    "because": [
-    "215599847",
     "215599764",
-    "215599793"
+    "215599793",
+    "215599847"
    ]
   },
   {
@@ -15092,38 +15208,6 @@
    "because": [
     "9469076",
     "49392"
-   ]
-  },
-  {
-   "bookId": "233717212",
-   "workId": "248462938",
-   "title": "Operation Bounce House",
-   "fullTitle": "Operation Bounce House",
-   "authorId": "999015",
-   "author": "Matt Dinniman",
-   "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1752549468i/233717212.jpg",
-   "genres": [
-    "Science Fiction",
-    "Audiobook",
-    "Fiction",
-    "Fantasy",
-    "Dystopia",
-    "Humor",
-    "Adult",
-    "Book Club",
-    "Adventure",
-    "Litrpg"
-   ],
-   "pages": 437,
-   "year": 2026,
-   "avgRating": 3.89,
-   "ratingsCount": 42260,
-   "description": "A man must fight for his planet against impossible odds when gamers from Earth attempt to remotely annihilate it in this epic, fast-paced novel from the New York Times bestselling author of the smash-hit Dungeon Crawler Carl.All colonist Oliver Lewis ever wanted to do is run the family ranch with his sister, maybe play a gig or two with his band, and keep his family’s aging fleet of intelligent agriculture bots ticking as long as possible. As a fan of Earth television and culture, he figures it will be a good thing when the transfer gate finally opens all the way and restores instant travel and full communication between Earth and his planet, New Sonora. But there’s a complication.Even…",
-   "language": "English",
-   "score": 1.646,
-   "because": [
-    "26082916",
-    "16278318"
    ]
   }
  ]

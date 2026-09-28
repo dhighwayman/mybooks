@@ -2,12 +2,12 @@
 """Genera data/library.json a partir del perfil público de Goodreads.
 
 Uso:
-    python3 scripts/build_data.py                # usa la caché local (.cache/)
+    python3 scripts/build_data.py                # usa la caché (cache/)
     python3 scripts/build_data.py --refresh      # vuelve a descargar las estanterías
     python3 scripts/build_data.py --refresh-all  # vuelve a descargar todo
 
 Solo usa la biblioteca estándar de Python. Las páginas de Goodreads se
-resumen y se guardan en .cache/ para no repetir peticiones.
+resumen y se guardan en cache/ (versionada) para no repetir peticiones.
 """
 
 import argparse
@@ -32,7 +32,7 @@ SHELVES = ["read", "currently-reading", "to-read"]
 BASE = "https://www.goodreads.com"
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CACHE = os.path.join(ROOT, ".cache")
+CACHE = os.path.join(ROOT, "cache")  # versionada: así la Action solo descarga lo nuevo
 OUT = os.path.join(ROOT, "data", "library.json")
 
 # Series que en Goodreads no son "series" de verdad (colecciones editoriales).

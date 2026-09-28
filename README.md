@@ -27,7 +27,7 @@ python3 scripts/build_data.py --refresh   # vuelve a leer tus estanterías
 git add data/library.json && git commit -m "Actualiza libros" && git push
 ```
 
-El script solo usa la biblioteca estándar de Python. Lee el RSS público de las estanterías `read`, `currently-reading` y `to-read`, y después las páginas públicas de cada libro, serie, autor y "lectores también disfrutaron". Guarda lo descargado en `.cache/` (ignorado por git), así que las siguientes ejecuciones solo piden lo nuevo. `--refresh-all` descarga todo otra vez.
+El script solo usa la biblioteca estándar de Python. Lee el RSS público de las estanterías `read`, `currently-reading` y `to-read`, y después las páginas públicas de cada libro, serie, autor y "lectores también disfrutaron". Guarda lo descargado en `cache/` (que está en el repositorio), así que las siguientes ejecuciones, también las de GitHub Actions, solo piden lo nuevo. `--refresh-all` descarga todo otra vez.
 
 También hay un workflow opcional (`.github/workflows/update-data.yml`) que hace lo mismo cada lunes o a mano desde la pestaña *Actions*. Si Goodreads bloquea los servidores de GitHub, basta con ejecutar el script en local.
 
